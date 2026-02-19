@@ -1,0 +1,1602 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Event Analytics Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="./gold-logo.ico" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1"></script>
+    <!-- Analytics removed for demo -->
+    <style>
+      :root {
+        --alpha-color: #3b82f6;
+        --beta-color: #ef4444;
+        --bg: #fafafa;
+        --card-bg: #fff;
+        --border: #e5e7eb;
+        --text: #111827;
+        --text-muted: #6b7280;
+        --hover-bg: #f9fafb;
+        --input-bg: #fff;
+      }
+
+      [data-theme="dark"] {
+        --bg: #111827;
+        --card-bg: #1f2937;
+        --border: #374151;
+        --text: #f9fafb;
+        --text-muted: #9ca3af;
+        --hover-bg: #374151;
+        --input-bg: #374151;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: var(--bg);
+        color: var(--text);
+        transition: background-color 0.2s, color 0.2s;
+        position: relative;
+        min-height: 100vh;
+      }
+
+      /* Starfield Background */
+      .stars {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
+
+      [data-theme="light"] .stars {
+        opacity: 0;
+      }
+
+      .star {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: #fff;
+        border-radius: 50%;
+        opacity: 0;
+        animation: twinkle var(--duration, 3s) ease-in-out infinite;
+        animation-delay: var(--delay, 0s);
+      }
+
+      .star::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 6px;
+        height: 6px;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+        border-radius: 50%;
+      }
+
+      @keyframes twinkle {
+        0%, 100% { opacity: 0.15; transform: scale(0.8); }
+        50% { opacity: 0.7; transform: scale(1.1); }
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .header-left {
+        flex: 1;
+      }
+
+      .logo-center {
+        flex: 0 0 auto;
+      }
+
+      .logo-center .logo {
+        height: 150px;
+        width: auto;
+      }
+
+      .header-left h1 {
+        margin: 0 0 4px 0;
+        font-size: 1.75rem;
+      }
+
+      .header-left small {
+        color: var(--text-muted);
+        font-size: 0.875rem;
+      }
+
+      .nav-buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .nav-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 14px;
+        background: rgba(20, 20, 30, 0.9);
+        border: 2px solid rgba(255, 215, 0, 0.5);
+        border-radius: 20px;
+        color: #ffd700;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .nav-btn:hover {
+        background: rgba(255, 215, 0, 0.15);
+        border-color: #ffd700;
+        transform: translateY(-1px);
+      }
+
+      .nav-icon {
+        font-size: 1rem;
+      }
+
+      @media (max-width: 600px) {
+        .nav-buttons {
+          gap: 6px;
+        }
+        .nav-btn {
+          padding: 6px 10px;
+          font-size: 0.8rem;
+        }
+        .nav-btn span:not(.nav-icon) {
+          display: none;
+        }
+      }
+
+      .fallback-banner {
+        background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%);
+        color: #1a1a1a;
+        padding: 10px 16px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 0.9rem;
+        border-radius: 6px;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .fallback-banner .fallback-icon {
+        font-size: 1.1rem;
+      }
+
+      /* Victory Banner */
+      .victory-banner {
+        background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #1e3a5f 100%);
+        border: 3px solid #ffd700;
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .victory-banner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 200%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+        animation: shimmer 3s infinite;
+        pointer-events: none;
+      }
+
+      @keyframes shimmer {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(50%); }
+      }
+
+      .victory-banner h2 {
+        color: #ffd700;
+        margin: 0 0 8px 0;
+        font-size: 1.75rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        position: relative;
+      }
+
+      .victory-banner .victory-text {
+        color: #e0e7ff;
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .victory-banner .winner-highlight {
+        color: #93c5fd;
+        font-weight: 700;
+      }
+
+      /* Team summaries in banner */
+      .victory-banner .team-summaries {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        position: relative;
+      }
+
+      .victory-banner .banner-team-card {
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 12px;
+        padding: 16px 24px;
+        min-width: 180px;
+        border: 2px solid transparent;
+      }
+
+      .victory-banner .banner-team-card.alpha {
+        border-color: var(--alpha-color);
+      }
+
+      .victory-banner .banner-team-card.beta {
+        border-color: var(--beta-color);
+      }
+
+      .victory-banner .banner-team-card.winner {
+        background: rgba(59, 130, 246, 0.15);
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+      }
+
+      .victory-banner .banner-team-card img {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 8px;
+      }
+
+      .victory-banner .banner-team-card .team-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 4px;
+      }
+
+      .victory-banner .banner-team-card .team-hits {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+
+      .victory-banner .banner-team-card.alpha .team-hits {
+        color: #93c5fd;
+      }
+
+      .victory-banner .banner-team-card.beta .team-hits {
+        color: #fca5a5;
+      }
+
+      .victory-banner .banner-team-card .team-members {
+        font-size: 0.85rem;
+        color: #9ca3af;
+      }
+
+      .victory-banner .winner-badge {
+        background: #ffd700;
+        color: #1a1a1a;
+        font-size: 0.7rem;
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 4px;
+        margin-top: 8px;
+        display: inline-block;
+      }
+
+      /* Top performers table */
+      .victory-banner .top-performers {
+        background: rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+        padding: 16px;
+        position: relative;
+      }
+
+      .victory-banner .top-performers h3 {
+        color: #ffd700;
+        margin: 0 0 12px 0;
+        font-size: 1.1rem;
+      }
+
+      .victory-banner .performers-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+      }
+
+      .victory-banner .performers-table th {
+        color: #9ca3af;
+        font-weight: 500;
+        text-align: left;
+        padding: 6px 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+      }
+
+      .victory-banner .performers-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        color: #e0e7ff;
+      }
+
+      .victory-banner .performers-table tr:hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .victory-banner .performers-table .rank {
+        color: #ffd700;
+        font-weight: 600;
+        width: 40px;
+      }
+
+      .victory-banner .performers-table .name {
+        font-weight: 500;
+      }
+
+      .victory-banner .performers-table .name.alpha-player {
+        color: #93c5fd;
+      }
+
+      .victory-banner .performers-table .name.beta-player {
+        color: #fca5a5;
+      }
+
+      .victory-banner .performers-table .hits {
+        font-weight: 600;
+        color: #4ade80;
+      }
+
+      .victory-banner .performers-table .taken {
+        color: #fb7185;
+      }
+
+      .victory-banner .performers-table .ratio {
+        color: #fbbf24;
+      }
+
+      .victory-banner .performers-table-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+
+      @media (max-width: 800px) {
+        .victory-banner .performers-table-wrapper {
+          grid-template-columns: 1fr;
+        }
+        .victory-banner .team-summaries {
+          gap: 12px;
+        }
+        .victory-banner .banner-team-card {
+          min-width: 140px;
+          padding: 12px 16px;
+        }
+      }
+
+      .team-stats {
+        flex: 1;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .team-stat {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 8px 14px;
+        text-align: center;
+        min-width: 100px;
+      }
+
+      .team-stat.alpha { border-left: 4px solid var(--alpha-color); }
+      .team-stat.beta { border-left: 4px solid var(--beta-color); }
+
+      .team-stat .label { font-size: 0.75rem; color: var(--text-muted); }
+      .team-stat .value { font-size: 1.25rem; font-weight: 600; }
+      .team-stat .team-logo { width: 28px; height: 28px; margin-bottom: 4px; }
+      .team-stat .stat-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; margin-top: 4px; }
+      .team-stat .hits-strong { font-weight: 700; background: var(--hover-bg); padding: 2px 8px; border-radius: 999px; color: var(--text); }
+      .team-stat .adjusted { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; }
+
+      .search-bar {
+        margin-bottom: 16px;
+      }
+
+      .search-bar input {
+        padding: 10px 14px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-size: 0.9rem;
+        width: 320px;
+        max-width: 100%;
+        background: var(--input-bg);
+        color: var(--text);
+      }
+
+      .search-bar input:focus {
+        outline: none;
+        border-color: var(--alpha-color);
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+
+      @media (max-width: 900px) {
+        .row { grid-template-columns: 1fr; }
+      }
+
+      .card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .card h3 {
+        margin: 0 0 12px 0;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .toolbar {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 12px;
+        flex-wrap: wrap;
+      }
+
+      .toolbar input {
+        padding: 6px 10px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        font-size: 0.8rem;
+        flex: 1;
+        min-width: 120px;
+        background: var(--input-bg);
+        color: var(--text);
+      }
+
+      .toolbar input:focus {
+        outline: none;
+        border-color: var(--alpha-color);
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      }
+
+      .toolbar select {
+        padding: 6px 10px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        font-size: 0.8rem;
+        background: var(--input-bg);
+        color: var(--text);
+        cursor: pointer;
+      }
+
+      .toolbar select:focus {
+        outline: none;
+        border-color: var(--alpha-color);
+      }
+
+      .stats-panel {
+        background: var(--hover-bg);
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin-bottom: 12px;
+        display: none;
+      }
+
+      .stats-panel.visible { display: block; }
+
+      .stats-panel .user-name {
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+      }
+
+      .stats-panel .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 8px;
+      }
+
+      .stats-panel .stat-item {
+        text-align: center;
+      }
+
+      .stats-panel .stat-label {
+        font-size: 0.7rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+      }
+
+      .stats-panel .stat-value {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .chip-btn {
+        border: 1px solid var(--border);
+        background: var(--card-bg);
+        color: var(--text);
+        border-radius: 8px;
+        padding: 4px 10px;
+        font-size: 0.8rem;
+        cursor: pointer;
+      }
+
+      .chip-btn.active {
+        border-color: var(--alpha-color);
+        color: var(--alpha-color);
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+      }
+
+      .scroll {
+        max-height: 480px;
+        overflow: auto;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.875rem;
+      }
+
+      th, td {
+        border-bottom: 1px solid var(--border);
+        padding: 8px 10px;
+        text-align: left;
+      }
+
+      th {
+        cursor: pointer;
+        user-select: none;
+        position: sticky;
+        top: 0;
+        background: var(--card-bg);
+        font-weight: 600;
+        white-space: nowrap;
+      }
+
+      th:hover { background: var(--hover-bg); }
+
+      tr:hover { background: var(--hover-bg); }
+      tr.highlight { background: #fef3c7 !important; }
+      [data-theme="dark"] tr.highlight { background: #78350f !important; }
+
+      .pill {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+
+      .pill.alpha { background: #dbeafe; color: #1e40af; }
+      .pill.beta { background: #fee2e2; color: #991b1b; }
+
+      .chart-container {
+        position: relative;
+        height: 350px;
+      }
+
+      .legend-note {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-top: 8px;
+      }
+
+      #topLists {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      #topLists table {
+        font-size: 0.8rem;
+      }
+
+      #topLists th, #topLists td {
+        padding: 4px 8px;
+      }
+
+      /* Collapsible table styles */
+      .collapsible-table .parent-row {
+        cursor: pointer;
+        background: var(--card-bg);
+      }
+      .collapsible-table .parent-row:hover {
+        background: var(--hover-bg);
+      }
+      .collapsible-table .parent-row td:first-child::before {
+        content: "▶ ";
+        font-size: 0.7rem;
+        color: var(--text-muted);
+      }
+      .collapsible-table .parent-row.expanded td:first-child::before {
+        content: "▼ ";
+      }
+      .collapsible-table .child-row {
+        display: none;
+        background: var(--hover-bg);
+      }
+      .collapsible-table .child-row.visible {
+        display: table-row;
+      }
+      .collapsible-table .child-row td {
+        padding-left: 28px;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+      .collapsible-table .child-row td:first-child {
+        border-left: 2px solid var(--border);
+      }
+      .collapsible-table .total-row {
+        font-weight: 600;
+        background: var(--hover-bg);
+      }
+
+      /* Dark mode toggle */
+      .theme-toggle {
+        background: none;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 6px 12px;
+        cursor: pointer;
+        font-size: 1rem;
+        color: var(--text);
+      }
+      .theme-toggle:hover {
+        background: var(--hover-bg);
+      }
+
+      .header-controls {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+      }
+
+      /* Date inputs */
+      .toolbar input[type="date"] {
+        padding: 5px 8px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        font-size: 0.8rem;
+        background: var(--input-bg);
+        color: var(--text);
+      }
+
+      /* Heatmap styles */
+      .heatmap-grid {
+        display: grid;
+        gap: 3px;
+        font-size: 0.7rem;
+        width: 100%;
+      }
+      .heatmap-cell {
+        aspect-ratio: 1;
+        min-height: 20px;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .heatmap-label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        color: var(--text-muted);
+        white-space: nowrap;
+        font-size: 0.65rem;
+      }
+
+      /* Battles */
+      .battle-controls {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+      .battle-controls input,
+      .battle-controls select {
+        padding: 6px 8px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--input-bg);
+        color: var(--text);
+      }
+      .battle-selected {
+        background: var(--hover-bg);
+      }
+
+      /* H2H styles */
+      .h2h-user {
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+      }
+      .h2h-stat {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+      .h2h-value {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      .h2h-winner {
+        color: #16a34a;
+      }
+      .h2h-vs {
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: var(--text-muted);
+        align-self: center;
+      }
+
+      /* Combo box / autocomplete styles */
+      .combo-box {
+        position: relative;
+        display: inline-block;
+      }
+
+      .combo-box input {
+        width: 100%;
+      }
+
+      .combo-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        max-height: 200px;
+        overflow-y: auto;
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        display: none;
+      }
+
+      .combo-dropdown.visible {
+        display: block;
+      }
+
+      .combo-option {
+        padding: 8px 12px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .combo-option:hover,
+      .combo-option.highlighted {
+        background: var(--hover-bg);
+      }
+
+      .combo-option .pill {
+        font-size: 0.7rem;
+      }
+
+      .combo-no-results {
+        padding: 8px 12px;
+        color: var(--text-muted);
+        font-style: italic;
+      }
+
+      .search-bar .combo-box {
+        width: 320px;
+        max-width: 100%;
+      }
+
+      .toolbar .combo-box {
+        flex: 1;
+        min-width: 120px;
+      }
+
+      /* Data mode toggle */
+      .data-toggle {
+        display: flex;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+        font-size: 0.8rem;
+      }
+
+      .data-toggle-btn {
+        padding: 6px 12px;
+        border: none;
+        background: var(--card-bg);
+        color: var(--text-muted);
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 0.8rem;
+      }
+
+      .data-toggle-btn:not(:last-child) {
+        border-right: 1px solid var(--border);
+      }
+
+      .data-toggle-btn:hover {
+        background: var(--hover-bg);
+      }
+
+      .data-toggle-btn.active {
+        background: var(--alpha-color);
+        color: white;
+      }
+
+      .data-mode-indicator {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .data-mode-label {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+      }
+
+      /* Section link button */
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .section-link-btn {
+        background: none;
+        border: none;
+        color: var(--text-muted);
+        cursor: pointer;
+        padding: 2px 6px;
+        font-size: 0.85rem;
+        border-radius: 4px;
+        transition: background 0.2s, color 0.2s;
+      }
+
+      .section-link-btn:hover {
+        background: var(--hover-bg);
+        color: var(--text);
+      }
+
+      .section-link-btn.copied {
+        color: #16a34a;
+      }
+
+      /* Scroll margin for anchor links */
+      [id] {
+        scroll-margin-top: 20px;
+      }
+
+      /* Refresh button spin animation */
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      #refreshIcon {
+        display: inline-block;
+      }
+
+      /* Admin panel / Clone detection styles */
+      .admin-card {
+        border: 2px solid #ef4444;
+        background: linear-gradient(135deg, var(--card-bg) 0%, rgba(239, 68, 68, 0.05) 100%);
+      }
+
+      .suspicion-score {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 0.85rem;
+      }
+
+      .score-high {
+        background: #fee2e2;
+        color: #dc2626;
+      }
+
+      .score-medium {
+        background: #fef3c7;
+        color: #d97706;
+      }
+
+      .score-low {
+        background: #e0e7ff;
+        color: #4f46e5;
+      }
+
+      [data-theme="dark"] .score-high {
+        background: rgba(220, 38, 38, 0.2);
+        color: #fca5a5;
+      }
+
+      [data-theme="dark"] .score-medium {
+        background: rgba(217, 119, 6, 0.2);
+        color: #fcd34d;
+      }
+
+      [data-theme="dark"] .score-low {
+        background: rgba(79, 70, 229, 0.2);
+        color: #a5b4fc;
+      }
+
+      .clone-flags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        align-items: center;
+      }
+
+      .flag-item {
+        background: #fef3c7;
+        color: #92400e;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+      }
+
+      [data-theme="dark"] .flag-item {
+        background: rgba(251, 191, 36, 0.15);
+        color: #fbbf24;
+      }
+
+      #cloneDetectionPanel .parent-row {
+        cursor: pointer;
+      }
+
+      #cloneDetectionPanel .parent-row:hover {
+        background: var(--hover-bg);
+      }
+
+      #cloneDetectionPanel .child-row {
+        display: none;
+        background: var(--hover-bg);
+      }
+
+      #cloneDetectionPanel .child-row.expanded {
+        display: table-row;
+      }
+
+      #cloneDetectionPanel .parent-row.expanded {
+        background: var(--hover-bg);
+        font-weight: 500;
+      }
+
+      /* Traitors panel styles */
+      .traitors-summary {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+        padding: 8px 12px;
+        background: var(--hover-bg);
+        border-radius: 8px;
+      }
+
+      .traitor-stat {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.9rem;
+      }
+
+      #traitorsPanel table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      #traitorsPanel th,
+      #traitorsPanel td {
+        padding: 8px 12px;
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+      }
+
+      #traitorsPanel th {
+        background: var(--hover-bg);
+        font-weight: 600;
+      }
+
+      #traitorsPanel tr:hover td {
+        background: var(--hover-bg);
+      }
+
+      /* Sortable table headers */
+      .sortable-table th.sortable {
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .sortable-table th.sortable:hover {
+        background: var(--hover-bg);
+      }
+
+      /* Join dates panel */
+      .join-dates-controls {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .join-dates-controls .filter-select {
+        padding: 8px 12px;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+        background: var(--card-bg);
+        color: var(--text);
+        font-size: 0.875rem;
+      }
+
+      .join-dates-controls .filter-checkbox {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        cursor: pointer;
+      }
+
+      .join-dates-controls .filter-checkbox input {
+        cursor: pointer;
+      }
+
+      #joinDatesPanel table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      #joinDatesPanel th,
+      #joinDatesPanel td {
+        padding: 8px 12px;
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+      }
+
+      #joinDatesPanel th {
+        background: var(--hover-bg);
+        font-weight: 600;
+        position: sticky;
+        top: 0;
+      }
+
+      #joinDatesPanel tr:hover td {
+        background: var(--hover-bg);
+      }
+
+      #joinDatesPanel .date-cell {
+        color: var(--text-muted);
+        font-size: 0.875rem;
+      }
+
+      .admin-card.full-width {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+
+      /* Missing from roster panel */
+      #missingRosterPanel table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      #missingRosterPanel th,
+      #missingRosterPanel td {
+        padding: 8px 12px;
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+      }
+
+      #missingRosterPanel th {
+        background: var(--hover-bg);
+        font-weight: 600;
+        position: sticky;
+        top: 0;
+      }
+
+      #missingRosterPanel tr:hover td {
+        background: var(--hover-bg);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Animated Stars -->
+    <div class="stars" id="stars" aria-hidden="true"></div>
+
+    <!-- Victory Banner -->
+    <div class="victory-banner">
+      <h2>The Seasonal Competition Has Ended!</h2>
+      <p class="victory-text">
+        Congratulations to <span class="winner-highlight">Team Alpha</span> for winning by <strong>5,711 points</strong>!
+      </p>
+
+      <div class="team-summaries">
+        <div class="banner-team-card alpha winner">
+          <img src="team-alpha.png" alt="Team Alpha">
+          <div class="team-name">Team Alpha</div>
+          <div class="team-hits">23,472 hits</div>
+          <div class="team-members">296 participants</div>
+          <div class="winner-badge">WINNER</div>
+        </div>
+        <div class="banner-team-card beta">
+          <img src="team-beta.png" alt="Team Beta">
+          <div class="team-name">Team Beta</div>
+          <div class="team-hits">17,761 hits</div>
+          <div class="team-members">334 participants</div>
+        </div>
+      </div>
+
+      <div class="top-performers">
+        <h3>Top 20 Performers</h3>
+        <div class="performers-table-wrapper">
+          <table class="performers-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Player</th>
+                <th>Hits</th>
+                <th>Taken</th>
+                <th>Ratio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="rank">1</td><td class="name beta-player">Player_001</td><td class="hits">7,416</td><td class="taken">1,758</td><td class="ratio">4.22</td></tr>
+              <tr><td class="rank">2</td><td class="name alpha-player">Player_002</td><td class="hits">3,143</td><td class="taken">693</td><td class="ratio">4.54</td></tr>
+              <tr><td class="rank">3</td><td class="name alpha-player">Player_003</td><td class="hits">2,825</td><td class="taken">728</td><td class="ratio">3.88</td></tr>
+              <tr><td class="rank">4</td><td class="name alpha-player">Player_004</td><td class="hits">2,598</td><td class="taken">430</td><td class="ratio">6.04</td></tr>
+              <tr><td class="rank">5</td><td class="name beta-player">Player_005</td><td class="hits">1,579</td><td class="taken">1,434</td><td class="ratio">1.10</td></tr>
+              <tr><td class="rank">6</td><td class="name beta-player">Player_006</td><td class="hits">1,446</td><td class="taken">1,146</td><td class="ratio">1.26</td></tr>
+              <tr><td class="rank">7</td><td class="name alpha-player">Player_007</td><td class="hits">1,373</td><td class="taken">861</td><td class="ratio">1.59</td></tr>
+              <tr><td class="rank">8</td><td class="name alpha-player">Player_008</td><td class="hits">1,256</td><td class="taken">648</td><td class="ratio">1.94</td></tr>
+              <tr><td class="rank">9</td><td class="name alpha-player">Player_009</td><td class="hits">1,243</td><td class="taken">259</td><td class="ratio">4.80</td></tr>
+              <tr><td class="rank">10</td><td class="name alpha-player">Player_010</td><td class="hits">1,201</td><td class="taken">241</td><td class="ratio">4.98</td></tr>
+            </tbody>
+          </table>
+          <table class="performers-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Player</th>
+                <th>Hits</th>
+                <th>Taken</th>
+                <th>Ratio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="rank">11</td><td class="name alpha-player">Player_011</td><td class="hits">1,195</td><td class="taken">477</td><td class="ratio">2.51</td></tr>
+              <tr><td class="rank">12</td><td class="name alpha-player">Player_012</td><td class="hits">742</td><td class="taken">409</td><td class="ratio">1.81</td></tr>
+              <tr><td class="rank">13</td><td class="name alpha-player">Player_013</td><td class="hits">728</td><td class="taken">110</td><td class="ratio">6.62</td></tr>
+              <tr><td class="rank">14</td><td class="name alpha-player">Player_014</td><td class="hits">724</td><td class="taken">286</td><td class="ratio">2.53</td></tr>
+              <tr><td class="rank">15</td><td class="name beta-player">Player_015</td><td class="hits">706</td><td class="taken">302</td><td class="ratio">2.34</td></tr>
+              <tr><td class="rank">16</td><td class="name alpha-player">Player_016</td><td class="hits">679</td><td class="taken">215</td><td class="ratio">3.16</td></tr>
+              <tr><td class="rank">17</td><td class="name beta-player">Player_017</td><td class="hits">533</td><td class="taken">149</td><td class="ratio">3.58</td></tr>
+              <tr><td class="rank">18</td><td class="name alpha-player">Player_018</td><td class="hits">509</td><td class="taken">204</td><td class="ratio">2.50</td></tr>
+              <tr><td class="rank">19</td><td class="name alpha-player">Player_019</td><td class="hits">498</td><td class="taken">177</td><td class="ratio">2.81</td></tr>
+              <tr><td class="rank">20</td><td class="name alpha-player">Player_020</td><td class="hits">453</td><td class="taken">192</td><td class="ratio">2.36</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="header">
+      <div class="header-left">
+        <h1>Event Analytics Dashboard</h1>
+        <small id="meta">Loading...</small>
+        <div class="nav-buttons">
+          <!-- External links removed for demo -->
+        </div>
+      </div>
+      <div class="logo-center">
+        <img src="./snowy-logo.png" alt="Event Competition" class="logo" />
+      </div>
+      <!-- Team stats moved to victory banner -->
+      <div class="team-stats" id="teamStats" style="display:none;"></div>
+      <div class="header-controls">
+        <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">🌙</button>
+        <!-- Refresh button hidden - event has ended -->
+        <div class="data-mode-indicator">
+          <span class="data-mode-label">Archive:</span>
+          <div class="data-toggle">
+            <button class="data-toggle-btn active" id="dataModeLive" title="View final results">Final</button>
+            <button class="data-toggle-btn" id="dataModePreReset" title="View pre-reset historical data">Pre-Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="fallbackBanner" class="fallback-banner" style="display:none;"></div>
+
+    <div class="search-bar">
+      <div class="combo-box">
+        <input id="userSearch" placeholder="Search username (highlights on chart)..." autocomplete="off" />
+        <div class="combo-dropdown" id="userSearchDropdown"></div>
+      </div>
+      <span style="margin-left:8px;font-size:0.8rem;color:var(--text-muted);">Tip: search multiple users with commas. Entering just two will populate the head-to-head view.</span>
+    </div>
+
+    <div class="stats-panel" id="statsPanel">
+      <div class="user-name" id="statsPanelUser"></div>
+      <div class="stats-grid" id="statsPanelGrid"></div>
+    </div>
+
+    <div class="row">
+      <div class="card" style="grid-column: span 2;" id="head-to-head">
+        <h3 class="section-header">Head-to-Head Lookup <button class="section-link-btn" onclick="copySectionLink('head-to-head', this)" title="Copy link to section">🔗</button></h3>
+        <div class="toolbar">
+          <div class="combo-box">
+            <input id="h2hUser1" placeholder="User 1..." autocomplete="off" />
+            <div class="combo-dropdown" id="h2hUser1Dropdown"></div>
+          </div>
+          <span style="color:var(--text-muted);">vs</span>
+          <div class="combo-box">
+            <input id="h2hUser2" placeholder="User 2..." autocomplete="off" />
+            <div class="combo-dropdown" id="h2hUser2Dropdown"></div>
+          </div>
+          <button class="chip-btn" id="h2hCompare">Compare</button>
+        </div>
+        <div id="h2hResult" style="display:none;margin-top:12px;">
+          <div id="h2hStats" style="display:grid;grid-template-columns:1fr auto 1fr;gap:16px;text-align:center;"></div>
+        </div>
+        <p class="legend-note">Enter two usernames to see their head-to-head battle history.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card" id="scatter-chart">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+          <h3 style="margin:0;" class="section-header">Attacks vs Hits Taken <button class="section-link-btn" onclick="copySectionLink('scatter-chart', this)" title="Copy link to section">🔗</button></h3>
+          <button class="chip-btn" id="resetScatterZoom">Reset View</button>
+        </div>
+        <div class="chart-container">
+          <canvas id="scatter"></canvas>
+        </div>
+        <p class="legend-note">
+          Scroll to zoom. Drag to pan. Double-click to zoom in; Shift+double-click to zoom out.
+        </p>
+      </div>
+      <div class="card" id="users">
+        <h3 class="section-header">Users <span id="userCount" style="font-weight:normal;color:var(--text-muted);font-size:0.875rem;"></span> <button class="section-link-btn" onclick="copySectionLink('users', this)" title="Copy link to section">🔗</button></h3>
+        <div class="toolbar">
+          <input id="filterExpr" placeholder="Filter examples: attacks > 100, ratio >= 2" />
+          <select id="teamFilter">
+            <option value="All">All Teams</option>
+            <option value="Alpha">Team Alpha</option>
+            <option value="Beta">Team Beta</option>
+          </select>
+          <select id="sortSelect">
+            <option value="attacks-desc">Attacks (High-Low)</option>
+            <option value="attacks-asc">Attacks (Low-High)</option>
+            <option value="hitsTaken-desc">Hits Taken (High-Low)</option>
+            <option value="hitsTaken-asc">Hits Taken (Low-High)</option>
+            <option value="ratio-desc">Ratio (High-Low)</option>
+            <option value="ratio-asc">Ratio (Low-High)</option>
+            <option value="adjustedPoints-desc">Adj. Pts (High-Low)</option>
+            <option value="adjustedPoints-asc">Adj. Pts (Low-High)</option>
+            <option value="user-asc">Username (A-Z)</option>
+            <option value="user-desc">Username (Z-A)</option>
+          </select>
+        </div>
+        <div class="scroll">
+          <table id="usersTable"></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card" id="rooms">
+        <h3 class="section-header">Hits by Room (with Avg User Ratio) <button class="section-link-btn" onclick="copySectionLink('rooms', this)" title="Copy link to section">🔗</button></h3>
+        <div class="chart-container">
+          <canvas id="roomsChart"></canvas>
+        </div>
+        <p class="legend-note">Bars = total hits in room. Line = average user attack/defense ratio in that room.</p>
+      </div>
+      <div class="card" id="top-performers">
+        <h3 class="section-header">Top Performers <button class="section-link-btn" onclick="copySectionLink('top-performers', this)" title="Copy link to section">🔗</button></h3>
+        <div id="topLists"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card" id="daily-attacks">
+        <h3 class="section-header">Daily Attacks (Last 7 Days) <button class="section-link-btn" onclick="copySectionLink('daily-attacks', this)" title="Copy link to section">🔗</button></h3>
+        <div class="chart-container">
+          <canvas id="dailyChart"></canvas>
+        </div>
+        <p class="legend-note">Hover over bars to see top 10 attackers for each team on that day.</p>
+      </div>
+      <div class="card" id="heatmap-section">
+        <h3 class="section-header">Activity Heatmap <button class="section-link-btn" onclick="copySectionLink('heatmap-section', this)" title="Copy link to section">🔗</button></h3>
+        <div id="heatmapContainer" style="overflow-x:auto;">
+          <div id="heatmap"></div>
+        </div>
+        <p class="legend-note">Times are shown in Eastern (New York). Darker = more attacks.</p>
+      </div>
+    </div>
+
+    <div class="row" style="grid-template-columns: 1fr;">
+      <div class="card" id="battles-section">
+        <h3 class="section-header">Major Battles <button class="section-link-btn" onclick="copySectionLink('battles-section', this)" title="Copy link to section">🔗</button></h3>
+        <div class="battle-controls">
+          <select id="battleRoomFilter">
+            <option value="All">All Rooms</option>
+          </select>
+          <label class="legend-note" for="battleMinHits">Min hits</label>
+          <input id="battleMinHits" type="number" min="0" value="30" aria-label="Minimum hits for battle" />
+          <span class="legend-note">Filters apply to detected high-activity clusters.</span>
+        </div>
+        <div id="battlesTable" class="scroll" style="max-height:240px;"></div>
+        <div id="battleDetail" style="margin-top:10px;"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card" id="victim-breakdown">
+        <h3 class="section-header">User Victim Breakdown <button class="section-link-btn" onclick="copySectionLink('victim-breakdown', this)" title="Copy link to section">🔗</button></h3>
+        <p class="legend-note" style="margin-top:0;">Who did each attacker hit?</p>
+        <div class="toolbar">
+          <input id="victimTableSearch" placeholder="Search attacker..." />
+          <select id="victimTableTeam">
+            <option value="All">All Teams</option>
+            <option value="Alpha">Team Alpha</option>
+            <option value="Beta">Team Beta</option>
+          </select>
+        </div>
+        <div class="scroll" style="max-height: 500px;">
+          <table id="victimBreakdownTable" class="collapsible-table"></table>
+        </div>
+      </div>
+      <div class="card" id="attacker-breakdown">
+        <h3 class="section-header">User Attacker Breakdown <button class="section-link-btn" onclick="copySectionLink('attacker-breakdown', this)" title="Copy link to section">🔗</button></h3>
+        <p class="legend-note" style="margin-top:0;">Who targeted each victim? Find if someone is being singled out.</p>
+        <div class="toolbar">
+          <input id="attackerTableSearch" placeholder="Search victim..." />
+          <select id="attackerTableTeam">
+            <option value="All">All Teams</option>
+            <option value="Alpha">Team Alpha</option>
+            <option value="Beta">Team Beta</option>
+          </select>
+        </div>
+        <div class="scroll" style="max-height: 500px;">
+          <table id="attackerBreakdownTable" class="collapsible-table"></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card" id="alpha-roster">
+        <h3 class="section-header" style="display:flex;align-items:center;gap:8px;">
+          <img src="team-alpha.png" alt="Team Alpha" style="width:24px;height:24px;">
+          Team Alpha Roster
+          <span id="alphaRosterCount" style="font-weight:normal;color:var(--text-muted);font-size:0.875rem;"></span>
+          <button class="section-link-btn" onclick="copySectionLink('alpha-roster', this)" title="Copy link to section">🔗</button>
+        </h3>
+        <div class="toolbar">
+          <input id="alphaRosterSearch" placeholder="Search Team Alpha members..." />
+        </div>
+        <div class="scroll" style="max-height:300px;">
+          <table id="alphaRosterTable"></table>
+        </div>
+      </div>
+      <div class="card" id="beta-roster">
+        <h3 class="section-header" style="display:flex;align-items:center;gap:8px;">
+          <img src="team-beta.png" alt="Team Beta" style="width:24px;height:24px;">
+          Team Beta Roster
+          <span id="betaRosterCount" style="font-weight:normal;color:var(--text-muted);font-size:0.875rem;"></span>
+          <button class="section-link-btn" onclick="copySectionLink('beta-roster', this)" title="Copy link to section">🔗</button>
+        </h3>
+        <div class="toolbar">
+          <input id="betaRosterSearch" placeholder="Search Team Beta members..." />
+        </div>
+        <div class="scroll" style="max-height:300px;">
+          <table id="betaRosterTable"></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card" style="grid-column: span 2;" id="all-events">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <h3 style="margin:0;" class="section-header">All Events <span id="eventsCount" style="font-weight:normal;color:var(--text-muted);font-size:0.875rem;"></span> <button class="section-link-btn" onclick="copySectionLink('all-events', this)" title="Copy link to section">🔗</button></h3>
+          <button class="chip-btn" id="downloadEventsBtn">Download CSV</button>
+        </div>
+        <div class="toolbar" style="flex-wrap:wrap;">
+          <input id="eventsSearch" placeholder="Search attacker or victim..." />
+          <select id="eventsTeamFilter">
+            <option value="All">All Teams</option>
+            <option value="Alpha">Team Alpha</option>
+            <option value="Beta">Team Beta</option>
+          </select>
+          <select id="eventsRoomFilter">
+            <option value="All">All Rooms</option>
+          </select>
+          <input type="date" id="eventsDateFrom" title="From date" />
+          <input type="date" id="eventsDateTo" title="To date" />
+          <select id="eventsSort">
+            <option value="time-desc">Newest First</option>
+            <option value="time-asc">Oldest First</option>
+            <option value="attacker-asc">Attacker (A-Z)</option>
+            <option value="attacker-desc">Attacker (Z-A)</option>
+            <option value="team-asc">Team (A-Z)</option>
+            <option value="team-desc">Team (Z-A)</option>
+            <option value="victim-asc">Victim (A-Z)</option>
+            <option value="victim-desc">Victim (Z-A)</option>
+            <option value="room-asc">Room (A-Z)</option>
+            <option value="room-desc">Room (Z-A)</option>
+          </select>
+        </div>
+        <div class="scroll" style="max-height: 500px;">
+          <table id="eventsTable"></table>
+        </div>
+        <p class="legend-note">Click column headers to sort. Download exports all filtered results.</p>
+      </div>
+    </div>
+
+    <!-- Debug section (hidden by default, enabled via ?debug=true) -->
+    <div id="debug-section" style="display:none;">
+      <div class="row">
+        <div class="card admin-card full-width" id="suspicious-detection">
+          <h3 class="section-header" style="display:flex;align-items:center;gap:8px;">
+            <span style="color:#ef4444;">&#9888;</span>
+            Suspicious Detection
+            <span id="suspiciousCount" style="font-weight:normal;color:var(--text-muted);font-size:0.875rem;"></span>
+            <button class="section-link-btn" onclick="copySectionLink('suspicious-detection', this)" title="Copy link to section">&#128279;</button>
+          </h3>
+          <p class="legend-note" style="margin-top:0;">
+            Flagged accounts: potential clones (low attacks, concentrated attackers) and farming targets (high hits, low ratio).
+            Click a row to expand details.
+          </p>
+          <div class="scroll" style="max-height:500px;">
+            <div id="cloneDetectionPanel"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Admin-only section (hidden by default, enabled via ?admin=true) -->
+    <div id="admin-section" style="display:none;">
+      <div class="row">
+        <div class="card admin-card full-width" id="traitors-section">
+          <h3 class="section-header" style="display:flex;align-items:center;gap:8px;">
+            <span style="color:#f59e0b;">&#128481;</span>
+            Team Traitors
+            <span id="traitorsCount" style="font-weight:normal;color:var(--text-muted);font-size:0.875rem;"></span>
+            <button class="section-link-btn" onclick="copySectionLink('traitors-section', this)" title="Copy link to section">&#128279;</button>
+          </h3>
+          <p class="legend-note" style="margin-top:0;">
+            Users who switched teams between pre-reset and the current season.
+          </p>
+          <div class="scroll" style="max-height:500px;">
+            <div id="traitorsPanel"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="card admin-card full-width" id="join-dates-section">
+          <h3 class="section-header" style="display:flex;align-items:center;gap:8px;">
+            <span style="color:#22c55e;">&#128197;</span>
+            User Join Dates
+            <span id="joinDatesCount" style="font-weight:normal;color:var(--text-muted);font-size:0.875rem;"></span>
+            <button class="section-link-btn" onclick="copySectionLink('join-dates-section', this)" title="Copy link to section">&#128279;</button>
+          </h3>
+          <p class="legend-note" style="margin-top:0;">
+            When users first appeared in team rosters (tracked via git history).
+          </p>
+          <div class="join-dates-controls">
+            <input type="text" id="joinDatesSearch" placeholder="Search username..." class="filter-input" style="width:200px;">
+            <select id="joinDatesTeamFilter" class="filter-select">
+              <option value="">All Teams</option>
+              <option value="Alpha">Team Alpha</option>
+              <option value="Beta">Team Beta</option>
+            </select>
+            <select id="joinDatesSortOrder" class="filter-select">
+              <option value="newest">Newest First</option>
+              <option value="oldest">Oldest First</option>
+              <option value="alpha">A-Z</option>
+            </select>
+            <label class="filter-checkbox">
+              <input type="checkbox" id="joinDatesHideBaseline">
+              <span>Hide baseline users</span>
+            </label>
+          </div>
+          <div class="scroll" style="max-height:600px;">
+            <div id="joinDatesPanel"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="card admin-card" id="missing-roster-section">
+          <h3 class="section-header" style="display:flex;align-items:center;gap:8px;">
+            <span style="color:#ef4444;">&#128566;</span>
+            Missing from Roster
+            <span id="missingRosterCount" style="font-weight:normal;color:var(--text-muted);font-size:0.875rem;"></span>
+            <button class="section-link-btn" onclick="copySectionLink('missing-roster-section', this)" title="Copy link to section">&#128279;</button>
+          </h3>
+          <p class="legend-note" style="margin-top:0;">
+            Users who participated in seasonal competitions but aren't in the current roster. May indicate name changes or removed users.
+          </p>
+          <div class="scroll" style="max-height:400px;">
+            <div id="missingRosterPanel"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+    <script>
+      // Twinkling Stars Background
+      function createStars() {
+        const container = document.getElementById('stars');
+        if (!container) return;
+        container.innerHTML = '';
+        const count = Math.floor(window.innerWidth * window.innerHeight / 8000);
+        for (let i = 0; i < count; i++) {
+          const star = document.createElement('div');
+          star.className = 'star';
+          star.style.left = Math.random() * 100 + 'vw';
+          star.style.top = Math.random() * 100 + 'vh';
+          star.style.setProperty('--delay', Math.random() * 4 + 's');
+          star.style.setProperty('--duration', (2 + Math.random() * 3) + 's');
+          const size = Math.random() < 0.3 ? 2 : 1;
+          star.style.width = size + 'px';
+          star.style.height = size + 'px';
+          container.appendChild(star);
+        }
+      }
+      createStars();
+      let starsResizeTimeout;
+      window.addEventListener('resize', () => {
+        clearTimeout(starsResizeTimeout);
+        starsResizeTimeout = setTimeout(createStars, 250);
+      });
+    </script>
+  </body>
+</html>

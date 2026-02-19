@@ -1,0 +1,3431 @@
+{
+  "generatedAt": "2025-12-19T05:19:26.320Z",
+  "totalRows": 42468,
+  "totalUsers": 422,
+  "teamStats": {
+    "Alpha": {
+      "users": 189,
+      "attacks": 22062,
+      "hitsTaken": 21159
+    },
+    "Beta": {
+      "users": 233,
+      "attacks": 20406,
+      "hitsTaken": 21309
+    },
+    "Unknown": {
+      "users": 0,
+      "attacks": 0,
+      "hitsTaken": 0
+    }
+  },
+  "teamVsTeam": [
+    {
+      "pair": "Alpha → Beta",
+      "count": 21181
+    },
+    {
+      "pair": "Beta → Alpha",
+      "count": 20278
+    },
+    {
+      "pair": "Alpha → Alpha",
+      "count": 881
+    },
+    {
+      "pair": "Beta → Beta",
+      "count": 128
+    }
+  ],
+  "topAttackers": [
+    {
+      "user": "Player_1486",
+      "attacks": 2422,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_0216",
+      "attacks": 2072,
+      "team": "Beta"
+    },
+    {
+      "user": "Player_1504",
+      "attacks": 1782,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_0218",
+      "attacks": 1529,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_1009",
+      "attacks": 1505,
+      "team": "Beta"
+    },
+    {
+      "user": "Player_0876",
+      "attacks": 1398,
+      "team": "Alpha"
+    },
+    {
+      "user": "PepaRaindrops",
+      "attacks": 1385,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_0951",
+      "attacks": 1147,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_0850",
+      "attacks": 1114,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_0871",
+      "attacks": 1091,
+      "team": "Beta"
+    },
+    {
+      "user": "Player_0910",
+      "attacks": 1031,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_0272",
+      "attacks": 1014,
+      "team": "Beta"
+    },
+    {
+      "user": "Player_0706",
+      "attacks": 872,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_0526",
+      "attacks": 842,
+      "team": "Beta"
+    },
+    {
+      "user": "Player_1064",
+      "attacks": 818,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_1221",
+      "attacks": 757,
+      "team": "Beta"
+    },
+    {
+      "user": "Player_0250",
+      "attacks": 739,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_0980",
+      "attacks": 699,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_0771",
+      "attacks": 672,
+      "team": "Beta"
+    },
+    {
+      "user": "Player_1396",
+      "attacks": 633,
+      "team": "Beta"
+    },
+    {
+      "user": "Player_0732",
+      "attacks": 630,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_1491",
+      "attacks": 576,
+      "team": "Beta"
+    },
+    {
+      "user": "Player_1437",
+      "attacks": 575,
+      "team": "Beta"
+    },
+    {
+      "user": "BoyInB1ack",
+      "attacks": 568,
+      "team": "Beta"
+    },
+    {
+      "user": "Player_0087",
+      "attacks": 561,
+      "team": "Beta"
+    }
+  ],
+  "topVictims": [
+    {
+      "user": "Player_1221",
+      "hitsTaken": 1445,
+      "team": "Beta"
+    },
+    {
+      "user": "Player_0216",
+      "hitsTaken": 1360,
+      "team": "Beta"
+    },
+    {
+      "user": "Player_1486",
+      "hitsTaken": 998,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_0850",
+      "hitsTaken": 957,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_0876",
+      "hitsTaken": 868,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_0526",
+      "hitsTaken": 839,
+      "team": "Beta"
+    },
+    {
+      "user": "Player_0862",
+      "hitsTaken": 811,
+      "team": "Alpha"
+    },
+    {
+      "user": "PepaRaindrops",
+      "hitsTaken": 792,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_0910",
+      "hitsTaken": 783,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_0980",
+      "hitsTaken": 703,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_1182",
+      "hitsTaken": 677,
+      "team": "Beta"
+    },
+    {
+      "user": "Player_0937",
+      "hitsTaken": 669,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_0871",
+      "hitsTaken": 666,
+      "team": "Beta"
+    },
+    {
+      "user": "Player_1315",
+      "hitsTaken": 627,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_0272",
+      "hitsTaken": 560,
+      "team": "Beta"
+    },
+    {
+      "user": "Player_1504",
+      "hitsTaken": 557,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_1437",
+      "hitsTaken": 530,
+      "team": "Beta"
+    },
+    {
+      "user": "Player_1291",
+      "hitsTaken": 515,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_0951",
+      "hitsTaken": 511,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_0706",
+      "hitsTaken": 506,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_1227",
+      "hitsTaken": 494,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_0173",
+      "hitsTaken": 463,
+      "team": "Alpha"
+    },
+    {
+      "user": "Cereal",
+      "hitsTaken": 454,
+      "team": "Alpha"
+    },
+    {
+      "user": "Player_0995",
+      "hitsTaken": 449,
+      "team": "Beta"
+    },
+    {
+      "user": "Player_0218",
+      "hitsTaken": 443,
+      "team": "Alpha"
+    }
+  ],
+  "scatterPoints": [
+    {
+      "user": "Player_0216",
+      "team": "Beta",
+      "attacks": 2072,
+      "hitsTaken": 1360,
+      "ratio": 1.5235294117647058
+    },
+    {
+      "user": "Player_1486",
+      "team": "Alpha",
+      "attacks": 2422,
+      "hitsTaken": 998,
+      "ratio": 2.4268537074148298
+    },
+    {
+      "user": "Player_1504",
+      "team": "Alpha",
+      "attacks": 1782,
+      "hitsTaken": 557,
+      "ratio": 3.1992818671454217
+    },
+    {
+      "user": "Player_0876",
+      "team": "Alpha",
+      "attacks": 1398,
+      "hitsTaken": 868,
+      "ratio": 1.6105990783410138
+    },
+    {
+      "user": "Player_1221",
+      "team": "Beta",
+      "attacks": 757,
+      "hitsTaken": 1445,
+      "ratio": 0.5238754325259516
+    },
+    {
+      "user": "PepaRaindrops",
+      "team": "Alpha",
+      "attacks": 1385,
+      "hitsTaken": 792,
+      "ratio": 1.7487373737373737
+    },
+    {
+      "user": "Player_0850",
+      "team": "Alpha",
+      "attacks": 1114,
+      "hitsTaken": 957,
+      "ratio": 1.1640543364681295
+    },
+    {
+      "user": "Player_0218",
+      "team": "Alpha",
+      "attacks": 1529,
+      "hitsTaken": 443,
+      "ratio": 3.4514672686230248
+    },
+    {
+      "user": "Player_1009",
+      "team": "Beta",
+      "attacks": 1505,
+      "hitsTaken": 427,
+      "ratio": 3.5245901639344264
+    },
+    {
+      "user": "Player_0910",
+      "team": "Alpha",
+      "attacks": 1031,
+      "hitsTaken": 783,
+      "ratio": 1.3167305236270754
+    },
+    {
+      "user": "Player_0871",
+      "team": "Beta",
+      "attacks": 1091,
+      "hitsTaken": 666,
+      "ratio": 1.6381381381381381
+    },
+    {
+      "user": "Player_0526",
+      "team": "Beta",
+      "attacks": 842,
+      "hitsTaken": 839,
+      "ratio": 1.0035756853396902
+    },
+    {
+      "user": "Player_0951",
+      "team": "Alpha",
+      "attacks": 1147,
+      "hitsTaken": 511,
+      "ratio": 2.244618395303327
+    },
+    {
+      "user": "Player_0272",
+      "team": "Beta",
+      "attacks": 1014,
+      "hitsTaken": 560,
+      "ratio": 1.8107142857142857
+    },
+    {
+      "user": "Player_0980",
+      "team": "Alpha",
+      "attacks": 699,
+      "hitsTaken": 703,
+      "ratio": 0.9943100995732574
+    },
+    {
+      "user": "Player_0706",
+      "team": "Alpha",
+      "attacks": 872,
+      "hitsTaken": 506,
+      "ratio": 1.7233201581027668
+    },
+    {
+      "user": "Player_0250",
+      "team": "Alpha",
+      "attacks": 739,
+      "hitsTaken": 410,
+      "ratio": 1.802439024390244
+    },
+    {
+      "user": "Player_1064",
+      "team": "Alpha",
+      "attacks": 818,
+      "hitsTaken": 289,
+      "ratio": 2.830449826989619
+    },
+    {
+      "user": "Player_1437",
+      "team": "Beta",
+      "attacks": 575,
+      "hitsTaken": 530,
+      "ratio": 1.0849056603773586
+    },
+    {
+      "user": "Player_0771",
+      "team": "Beta",
+      "attacks": 672,
+      "hitsTaken": 373,
+      "ratio": 1.801608579088472
+    },
+    {
+      "user": "Player_1396",
+      "team": "Beta",
+      "attacks": 633,
+      "hitsTaken": 402,
+      "ratio": 1.5746268656716418
+    },
+    {
+      "user": "Player_0862",
+      "team": "Alpha",
+      "attacks": 186,
+      "hitsTaken": 811,
+      "ratio": 0.22934648581997533
+    },
+    {
+      "user": "BoyInB1ack",
+      "team": "Beta",
+      "attacks": 568,
+      "hitsTaken": 389,
+      "ratio": 1.4601542416452442
+    },
+    {
+      "user": "Player_0087",
+      "team": "Beta",
+      "attacks": 561,
+      "hitsTaken": 315,
+      "ratio": 1.7809523809523808
+    },
+    {
+      "user": "Player_1182",
+      "team": "Beta",
+      "attacks": 193,
+      "hitsTaken": 677,
+      "ratio": 0.28508124076809455
+    },
+    {
+      "user": "Player_0937",
+      "team": "Alpha",
+      "attacks": 171,
+      "hitsTaken": 669,
+      "ratio": 0.2556053811659193
+    },
+    {
+      "user": "Player_0151",
+      "team": "Beta",
+      "attacks": 490,
+      "hitsTaken": 343,
+      "ratio": 1.4285714285714286
+    },
+    {
+      "user": "Player_1491",
+      "team": "Beta",
+      "attacks": 576,
+      "hitsTaken": 249,
+      "ratio": 2.3132530120481927
+    },
+    {
+      "user": "Player_0732",
+      "team": "Alpha",
+      "attacks": 630,
+      "hitsTaken": 190,
+      "ratio": 3.3157894736842106
+    },
+    {
+      "user": "Player_1441",
+      "team": "Beta",
+      "attacks": 434,
+      "hitsTaken": 378,
+      "ratio": 1.1481481481481481
+    },
+    {
+      "user": "Player_0173",
+      "team": "Alpha",
+      "attacks": 327,
+      "hitsTaken": 463,
+      "ratio": 0.7062634989200864
+    },
+    {
+      "user": "Player_1460",
+      "team": "Alpha",
+      "attacks": 522,
+      "hitsTaken": 267,
+      "ratio": 1.9550561797752808
+    },
+    {
+      "user": "Player_1227",
+      "team": "Alpha",
+      "attacks": 293,
+      "hitsTaken": 494,
+      "ratio": 0.5931174089068826
+    },
+    {
+      "user": "Player_0241",
+      "team": "Beta",
+      "attacks": 469,
+      "hitsTaken": 256,
+      "ratio": 1.83203125
+    },
+    {
+      "user": "Player_1291",
+      "team": "Alpha",
+      "attacks": 208,
+      "hitsTaken": 515,
+      "ratio": 0.40388349514563104
+    },
+    {
+      "user": "Player_0899",
+      "team": "Beta",
+      "attacks": 352,
+      "hitsTaken": 354,
+      "ratio": 0.9943502824858758
+    },
+    {
+      "user": "Player_1278",
+      "team": "Beta",
+      "attacks": 360,
+      "hitsTaken": 341,
+      "ratio": 1.0557184750733137
+    },
+    {
+      "user": "Player_1303",
+      "team": "Beta",
+      "attacks": 443,
+      "hitsTaken": 246,
+      "ratio": 1.8008130081300813
+    },
+    {
+      "user": "Player_1315",
+      "team": "Alpha",
+      "attacks": 20,
+      "hitsTaken": 627,
+      "ratio": 0.03189792663476874
+    },
+    {
+      "user": "Player_1388",
+      "team": "Beta",
+      "attacks": 282,
+      "hitsTaken": 344,
+      "ratio": 0.8197674418604651
+    },
+    {
+      "user": "Player_0469",
+      "team": "Beta",
+      "attacks": 376,
+      "hitsTaken": 215,
+      "ratio": 1.7488372093023257
+    },
+    {
+      "user": "Player_0745",
+      "team": "Alpha",
+      "attacks": 227,
+      "hitsTaken": 340,
+      "ratio": 0.6676470588235294
+    },
+    {
+      "user": "Player_0284",
+      "team": "Alpha",
+      "attacks": 289,
+      "hitsTaken": 269,
+      "ratio": 1.0743494423791822
+    },
+    {
+      "user": "Player_1032",
+      "team": "Alpha",
+      "attacks": 318,
+      "hitsTaken": 227,
+      "ratio": 1.4008810572687225
+    },
+    {
+      "user": "Player_0361",
+      "team": "Alpha",
+      "attacks": 294,
+      "hitsTaken": 251,
+      "ratio": 1.1713147410358566
+    },
+    {
+      "user": "Player_0068",
+      "team": "Alpha",
+      "attacks": 346,
+      "hitsTaken": 185,
+      "ratio": 1.8702702702702703
+    },
+    {
+      "user": "Player_0995",
+      "team": "Beta",
+      "attacks": 56,
+      "hitsTaken": 449,
+      "ratio": 0.12472160356347439
+    },
+    {
+      "user": "Player_1246",
+      "team": "Beta",
+      "attacks": 214,
+      "hitsTaken": 291,
+      "ratio": 0.7353951890034365
+    },
+    {
+      "user": "Player_1223",
+      "team": "Alpha",
+      "attacks": 280,
+      "hitsTaken": 207,
+      "ratio": 1.3526570048309179
+    },
+    {
+      "user": "Player_0143",
+      "team": "Beta",
+      "attacks": 352,
+      "hitsTaken": 121,
+      "ratio": 2.909090909090909
+    },
+    {
+      "user": "Player_1135",
+      "team": "Alpha",
+      "attacks": 71,
+      "hitsTaken": 401,
+      "ratio": 0.1770573566084788
+    },
+    {
+      "user": "Cereal",
+      "team": "Alpha",
+      "attacks": 13,
+      "hitsTaken": 454,
+      "ratio": 0.028634361233480177
+    },
+    {
+      "user": "Player_0083",
+      "team": "Beta",
+      "attacks": 211,
+      "hitsTaken": 239,
+      "ratio": 0.8828451882845189
+    },
+    {
+      "user": "Player_0408",
+      "team": "Beta",
+      "attacks": 25,
+      "hitsTaken": 424,
+      "ratio": 0.0589622641509434
+    },
+    {
+      "user": "Guest10148795",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 438,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0741",
+      "team": "Beta",
+      "attacks": 236,
+      "hitsTaken": 165,
+      "ratio": 1.4303030303030304
+    },
+    {
+      "user": "Player_1289",
+      "team": "Alpha",
+      "attacks": 49,
+      "hitsTaken": 345,
+      "ratio": 0.14202898550724638
+    },
+    {
+      "user": "Player_0393",
+      "team": "Beta",
+      "attacks": 197,
+      "hitsTaken": 191,
+      "ratio": 1.031413612565445
+    },
+    {
+      "user": "Player_0622",
+      "team": "Alpha",
+      "attacks": 166,
+      "hitsTaken": 222,
+      "ratio": 0.7477477477477478
+    },
+    {
+      "user": "Player_0382",
+      "team": "Beta",
+      "attacks": 256,
+      "hitsTaken": 122,
+      "ratio": 2.098360655737705
+    },
+    {
+      "user": "Player_0839",
+      "team": "Beta",
+      "attacks": 158,
+      "hitsTaken": 217,
+      "ratio": 0.728110599078341
+    },
+    {
+      "user": "Player_0225",
+      "team": "Alpha",
+      "attacks": 202,
+      "hitsTaken": 152,
+      "ratio": 1.3289473684210527
+    },
+    {
+      "user": "Player_0061",
+      "team": "Beta",
+      "attacks": 172,
+      "hitsTaken": 168,
+      "ratio": 1.0238095238095237
+    },
+    {
+      "user": "Player_1142",
+      "team": "Beta",
+      "attacks": 224,
+      "hitsTaken": 109,
+      "ratio": 2.055045871559633
+    },
+    {
+      "user": "AlecDaMan",
+      "team": "Alpha",
+      "attacks": 6,
+      "hitsTaken": 324,
+      "ratio": 0.018518518518518517
+    },
+    {
+      "user": "Player_0286",
+      "team": "Beta",
+      "attacks": 106,
+      "hitsTaken": 212,
+      "ratio": 0.5
+    },
+    {
+      "user": "Player_0856",
+      "team": "Beta",
+      "attacks": 22,
+      "hitsTaken": 287,
+      "ratio": 0.07665505226480836
+    },
+    {
+      "user": "Player_0981",
+      "team": "Beta",
+      "attacks": 43,
+      "hitsTaken": 265,
+      "ratio": 0.16226415094339622
+    },
+    {
+      "user": "Player_1141",
+      "team": "Beta",
+      "attacks": 234,
+      "hitsTaken": 65,
+      "ratio": 3.6
+    },
+    {
+      "user": "Player_0938",
+      "team": "Alpha",
+      "attacks": 198,
+      "hitsTaken": 91,
+      "ratio": 2.1758241758241756
+    },
+    {
+      "user": "Player_1419",
+      "team": "Alpha",
+      "attacks": 35,
+      "hitsTaken": 249,
+      "ratio": 0.14056224899598393
+    },
+    {
+      "user": "Player_0660",
+      "team": "Alpha",
+      "attacks": 116,
+      "hitsTaken": 164,
+      "ratio": 0.7073170731707317
+    },
+    {
+      "user": "Player_0460",
+      "team": "Beta",
+      "attacks": 124,
+      "hitsTaken": 145,
+      "ratio": 0.8551724137931035
+    },
+    {
+      "user": "Player_0895",
+      "team": "Beta",
+      "attacks": 108,
+      "hitsTaken": 154,
+      "ratio": 0.7012987012987013
+    },
+    {
+      "user": "Player_0100",
+      "team": "Beta",
+      "attacks": 77,
+      "hitsTaken": 181,
+      "ratio": 0.425414364640884
+    },
+    {
+      "user": "Player_1274",
+      "team": "Beta",
+      "attacks": 48,
+      "hitsTaken": 199,
+      "ratio": 0.24120603015075376
+    },
+    {
+      "user": "Player_1123",
+      "team": "Alpha",
+      "attacks": 62,
+      "hitsTaken": 184,
+      "ratio": 0.33695652173913043
+    },
+    {
+      "user": "Player_1500",
+      "team": "Beta",
+      "attacks": 153,
+      "hitsTaken": 90,
+      "ratio": 1.7
+    },
+    {
+      "user": "Player_0275",
+      "team": "Beta",
+      "attacks": 47,
+      "hitsTaken": 195,
+      "ratio": 0.24102564102564103
+    },
+    {
+      "user": "Player_1489",
+      "team": "Alpha",
+      "attacks": 169,
+      "hitsTaken": 72,
+      "ratio": 2.3472222222222223
+    },
+    {
+      "user": "Player_0237",
+      "team": "Alpha",
+      "attacks": 83,
+      "hitsTaken": 144,
+      "ratio": 0.5763888888888888
+    },
+    {
+      "user": "Player_0035",
+      "team": "Beta",
+      "attacks": 52,
+      "hitsTaken": 167,
+      "ratio": 0.31137724550898205
+    },
+    {
+      "user": "Player_1102",
+      "team": "Beta",
+      "attacks": 2,
+      "hitsTaken": 217,
+      "ratio": 0.009216589861751152
+    },
+    {
+      "user": "Player_1107",
+      "team": "Alpha",
+      "attacks": 66,
+      "hitsTaken": 149,
+      "ratio": 0.4429530201342282
+    },
+    {
+      "user": "Player_1206",
+      "team": "Alpha",
+      "attacks": 112,
+      "hitsTaken": 102,
+      "ratio": 1.0980392156862746
+    },
+    {
+      "user": "Player_1275",
+      "team": "Beta",
+      "attacks": 133,
+      "hitsTaken": 78,
+      "ratio": 1.705128205128205
+    },
+    {
+      "user": "Player_0960",
+      "team": "Alpha",
+      "attacks": 26,
+      "hitsTaken": 185,
+      "ratio": 0.14054054054054055
+    },
+    {
+      "user": "Player_1046",
+      "team": "Beta",
+      "attacks": 109,
+      "hitsTaken": 100,
+      "ratio": 1.09
+    },
+    {
+      "user": "Player_1004",
+      "team": "Beta",
+      "attacks": 146,
+      "hitsTaken": 58,
+      "ratio": 2.5172413793103448
+    },
+    {
+      "user": "Player_1329",
+      "team": "Beta",
+      "attacks": 129,
+      "hitsTaken": 74,
+      "ratio": 1.7432432432432432
+    },
+    {
+      "user": "Player_0530",
+      "team": "Beta",
+      "attacks": 103,
+      "hitsTaken": 91,
+      "ratio": 1.1318681318681318
+    },
+    {
+      "user": "Player_0448",
+      "team": "Alpha",
+      "attacks": 67,
+      "hitsTaken": 127,
+      "ratio": 0.5275590551181102
+    },
+    {
+      "user": "Player_1400",
+      "team": "Beta",
+      "attacks": 71,
+      "hitsTaken": 116,
+      "ratio": 0.6120689655172413
+    },
+    {
+      "user": "Player_0534",
+      "team": "Alpha",
+      "attacks": 98,
+      "hitsTaken": 89,
+      "ratio": 1.101123595505618
+    },
+    {
+      "user": "Player_0631",
+      "team": "Alpha",
+      "attacks": 140,
+      "hitsTaken": 42,
+      "ratio": 3.3333333333333335
+    },
+    {
+      "user": "Player_0009",
+      "team": "Beta",
+      "attacks": 24,
+      "hitsTaken": 158,
+      "ratio": 0.1518987341772152
+    },
+    {
+      "user": "Player_0328",
+      "team": "Alpha",
+      "attacks": 93,
+      "hitsTaken": 88,
+      "ratio": 1.0568181818181819
+    },
+    {
+      "user": "Player_1442",
+      "team": "Beta",
+      "attacks": 99,
+      "hitsTaken": 70,
+      "ratio": 1.4142857142857144
+    },
+    {
+      "user": "Player_0007",
+      "team": "Alpha",
+      "attacks": 135,
+      "hitsTaken": 33,
+      "ratio": 4.090909090909091
+    },
+    {
+      "user": "Player_0462",
+      "team": "Alpha",
+      "attacks": 79,
+      "hitsTaken": 88,
+      "ratio": 0.8977272727272727
+    },
+    {
+      "user": "Player_0970",
+      "team": "Alpha",
+      "attacks": 78,
+      "hitsTaken": 89,
+      "ratio": 0.8764044943820225
+    },
+    {
+      "user": "Player_0869",
+      "team": "Beta",
+      "attacks": 53,
+      "hitsTaken": 112,
+      "ratio": 0.4732142857142857
+    },
+    {
+      "user": "Player_1186",
+      "team": "Beta",
+      "attacks": 80,
+      "hitsTaken": 84,
+      "ratio": 0.9523809523809523
+    },
+    {
+      "user": "Player_0041",
+      "team": "Alpha",
+      "attacks": 17,
+      "hitsTaken": 143,
+      "ratio": 0.11888111888111888
+    },
+    {
+      "user": "Player_1095",
+      "team": "Alpha",
+      "attacks": 28,
+      "hitsTaken": 131,
+      "ratio": 0.21374045801526717
+    },
+    {
+      "user": "Player_1451",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 151,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0103",
+      "team": "Beta",
+      "attacks": 3,
+      "hitsTaken": 147,
+      "ratio": 0.02040816326530612
+    },
+    {
+      "user": "Player_0632",
+      "team": "Beta",
+      "attacks": 71,
+      "hitsTaken": 72,
+      "ratio": 0.9861111111111112
+    },
+    {
+      "user": "Player_0339",
+      "team": "Beta",
+      "attacks": 115,
+      "hitsTaken": 28,
+      "ratio": 4.107142857142857
+    },
+    {
+      "user": "DarthNihilus",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 142,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1397",
+      "team": "Alpha",
+      "attacks": 77,
+      "hitsTaken": 58,
+      "ratio": 1.3275862068965518
+    },
+    {
+      "user": "Player_0294",
+      "team": "Beta",
+      "attacks": 92,
+      "hitsTaken": 42,
+      "ratio": 2.1904761904761907
+    },
+    {
+      "user": "Player_0889",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 134,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1412",
+      "team": "Beta",
+      "attacks": 73,
+      "hitsTaken": 60,
+      "ratio": 1.2166666666666666
+    },
+    {
+      "user": "Player_0682",
+      "team": "Alpha",
+      "attacks": 38,
+      "hitsTaken": 95,
+      "ratio": 0.4
+    },
+    {
+      "user": "Player_0013",
+      "team": "Alpha",
+      "attacks": 12,
+      "hitsTaken": 118,
+      "ratio": 0.1016949152542373
+    },
+    {
+      "user": "Player_1281",
+      "team": "Beta",
+      "attacks": 1,
+      "hitsTaken": 129,
+      "ratio": 0.007751937984496124
+    },
+    {
+      "user": "Player_0633",
+      "team": "Beta",
+      "attacks": 74,
+      "hitsTaken": 55,
+      "ratio": 1.3454545454545455
+    },
+    {
+      "user": "Player_1271",
+      "team": "Beta",
+      "attacks": 41,
+      "hitsTaken": 87,
+      "ratio": 0.47126436781609193
+    },
+    {
+      "user": "Player_1405",
+      "team": "Beta",
+      "attacks": 32,
+      "hitsTaken": 96,
+      "ratio": 0.3333333333333333
+    },
+    {
+      "user": "Player_0603",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 128,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0765",
+      "team": "Beta",
+      "attacks": 97,
+      "hitsTaken": 27,
+      "ratio": 3.5925925925925926
+    },
+    {
+      "user": "Player_0979",
+      "team": "Beta",
+      "attacks": 6,
+      "hitsTaken": 117,
+      "ratio": 0.05128205128205128
+    },
+    {
+      "user": "Player_0389",
+      "team": "Beta",
+      "attacks": 50,
+      "hitsTaken": 70,
+      "ratio": 0.7142857142857143
+    },
+    {
+      "user": "Player_0459",
+      "team": "Beta",
+      "attacks": 2,
+      "hitsTaken": 118,
+      "ratio": 0.01694915254237288
+    },
+    {
+      "user": "Player_1368",
+      "team": "Alpha",
+      "attacks": 69,
+      "hitsTaken": 50,
+      "ratio": 1.38
+    },
+    {
+      "user": "Player_0476",
+      "team": "Alpha",
+      "attacks": 36,
+      "hitsTaken": 82,
+      "ratio": 0.43902439024390244
+    },
+    {
+      "user": "Player_0075",
+      "team": "Alpha",
+      "attacks": 57,
+      "hitsTaken": 60,
+      "ratio": 0.95
+    },
+    {
+      "user": "Rysnog",
+      "team": "Beta",
+      "attacks": 45,
+      "hitsTaken": 68,
+      "ratio": 0.6617647058823529
+    },
+    {
+      "user": "Player_0078",
+      "team": "Beta",
+      "attacks": 55,
+      "hitsTaken": 56,
+      "ratio": 0.9821428571428571
+    },
+    {
+      "user": "Player_1199",
+      "team": "Alpha",
+      "attacks": 2,
+      "hitsTaken": 108,
+      "ratio": 0.018518518518518517
+    },
+    {
+      "user": "Player_0904",
+      "team": "Beta",
+      "attacks": 21,
+      "hitsTaken": 87,
+      "ratio": 0.2413793103448276
+    },
+    {
+      "user": "Player_0334",
+      "team": "Beta",
+      "attacks": 9,
+      "hitsTaken": 95,
+      "ratio": 0.09473684210526316
+    },
+    {
+      "user": "Player_0466",
+      "team": "Beta",
+      "attacks": 41,
+      "hitsTaken": 61,
+      "ratio": 0.6721311475409836
+    },
+    {
+      "user": "Player_1198",
+      "team": "Beta",
+      "attacks": 51,
+      "hitsTaken": 46,
+      "ratio": 1.108695652173913
+    },
+    {
+      "user": "Player_1501",
+      "team": "Alpha",
+      "attacks": 22,
+      "hitsTaken": 74,
+      "ratio": 0.2972972972972973
+    },
+    {
+      "user": "Player_1390",
+      "team": "Beta",
+      "attacks": 47,
+      "hitsTaken": 48,
+      "ratio": 0.9791666666666666
+    },
+    {
+      "user": "Player_0005",
+      "team": "Beta",
+      "attacks": 65,
+      "hitsTaken": 30,
+      "ratio": 2.1666666666666665
+    },
+    {
+      "user": "Player_1091",
+      "team": "Beta",
+      "attacks": 21,
+      "hitsTaken": 73,
+      "ratio": 0.2876712328767123
+    },
+    {
+      "user": "Player_0769",
+      "team": "Alpha",
+      "attacks": 18,
+      "hitsTaken": 76,
+      "ratio": 0.23684210526315788
+    },
+    {
+      "user": "babymonkey",
+      "team": "Beta",
+      "attacks": 50,
+      "hitsTaken": 42,
+      "ratio": 1.1904761904761905
+    },
+    {
+      "user": "Player_1296",
+      "team": "Beta",
+      "attacks": 18,
+      "hitsTaken": 72,
+      "ratio": 0.25
+    },
+    {
+      "user": "Player_1185",
+      "team": "Beta",
+      "attacks": 5,
+      "hitsTaken": 85,
+      "ratio": 0.058823529411764705
+    },
+    {
+      "user": "Player_1452",
+      "team": "Beta",
+      "attacks": 35,
+      "hitsTaken": 54,
+      "ratio": 0.6481481481481481
+    },
+    {
+      "user": "Player_0483",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 88,
+      "ratio": 0
+    },
+    {
+      "user": "BetterDays",
+      "team": "Alpha",
+      "attacks": 22,
+      "hitsTaken": 63,
+      "ratio": 0.3492063492063492
+    },
+    {
+      "user": "Player_1187",
+      "team": "Beta",
+      "attacks": 38,
+      "hitsTaken": 47,
+      "ratio": 0.8085106382978723
+    },
+    {
+      "user": "Player_1143",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 84,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1310",
+      "team": "Beta",
+      "attacks": 25,
+      "hitsTaken": 58,
+      "ratio": 0.43103448275862066
+    },
+    {
+      "user": "Player_0134",
+      "team": "Beta",
+      "attacks": 18,
+      "hitsTaken": 65,
+      "ratio": 0.27692307692307694
+    },
+    {
+      "user": "Player_0152",
+      "team": "Beta",
+      "attacks": 12,
+      "hitsTaken": 69,
+      "ratio": 0.17391304347826086
+    },
+    {
+      "user": "Player_1305",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 81,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1014",
+      "team": "Alpha",
+      "attacks": 38,
+      "hitsTaken": 42,
+      "ratio": 0.9047619047619048
+    },
+    {
+      "user": "Player_0428",
+      "team": "Beta",
+      "attacks": 48,
+      "hitsTaken": 32,
+      "ratio": 1.5
+    },
+    {
+      "user": "Player_0678",
+      "team": "Beta",
+      "attacks": 33,
+      "hitsTaken": 45,
+      "ratio": 0.7333333333333333
+    },
+    {
+      "user": "Player_0521",
+      "team": "Beta",
+      "attacks": 41,
+      "hitsTaken": 36,
+      "ratio": 1.1388888888888888
+    },
+    {
+      "user": "Player_0661",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 76,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0969",
+      "team": "Alpha",
+      "attacks": 26,
+      "hitsTaken": 48,
+      "ratio": 0.5416666666666666
+    },
+    {
+      "user": "Player_0432",
+      "team": "Alpha",
+      "attacks": 29,
+      "hitsTaken": 44,
+      "ratio": 0.6590909090909091
+    },
+    {
+      "user": "Player_0939",
+      "team": "Beta",
+      "attacks": 28,
+      "hitsTaken": 45,
+      "ratio": 0.6222222222222222
+    },
+    {
+      "user": "Player_1503",
+      "team": "Alpha",
+      "attacks": 17,
+      "hitsTaken": 56,
+      "ratio": 0.30357142857142855
+    },
+    {
+      "user": "Player_0596",
+      "team": "Alpha",
+      "attacks": 20,
+      "hitsTaken": 52,
+      "ratio": 0.38461538461538464
+    },
+    {
+      "user": "Player_0194",
+      "team": "Beta",
+      "attacks": 26,
+      "hitsTaken": 44,
+      "ratio": 0.5909090909090909
+    },
+    {
+      "user": "Player_1453",
+      "team": "Beta",
+      "attacks": 55,
+      "hitsTaken": 14,
+      "ratio": 3.9285714285714284
+    },
+    {
+      "user": "Player_0268",
+      "team": "Alpha",
+      "attacks": 46,
+      "hitsTaken": 22,
+      "ratio": 2.090909090909091
+    },
+    {
+      "user": "Player_0854",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 68,
+      "ratio": 0
+    },
+    {
+      "user": "Lissa",
+      "team": "Beta",
+      "attacks": 16,
+      "hitsTaken": 51,
+      "ratio": 0.3137254901960784
+    },
+    {
+      "user": "Player_0404",
+      "team": "Alpha",
+      "attacks": 31,
+      "hitsTaken": 36,
+      "ratio": 0.8611111111111112
+    },
+    {
+      "user": "Player_0616",
+      "team": "Beta",
+      "attacks": 8,
+      "hitsTaken": 58,
+      "ratio": 0.13793103448275862
+    },
+    {
+      "user": "Player_0697",
+      "team": "Beta",
+      "attacks": 17,
+      "hitsTaken": 49,
+      "ratio": 0.3469387755102041
+    },
+    {
+      "user": "Player_0070",
+      "team": "Beta",
+      "attacks": 3,
+      "hitsTaken": 62,
+      "ratio": 0.04838709677419355
+    },
+    {
+      "user": "Player_0123",
+      "team": "Alpha",
+      "attacks": 18,
+      "hitsTaken": 46,
+      "ratio": 0.391304347826087
+    },
+    {
+      "user": "Player_0684",
+      "team": "Beta",
+      "attacks": 24,
+      "hitsTaken": 40,
+      "ratio": 0.6
+    },
+    {
+      "user": "Player_0639",
+      "team": "Beta",
+      "attacks": 32,
+      "hitsTaken": 31,
+      "ratio": 1.032258064516129
+    },
+    {
+      "user": "Player_0953",
+      "team": "Beta",
+      "attacks": 6,
+      "hitsTaken": 57,
+      "ratio": 0.10526315789473684
+    },
+    {
+      "user": "Player_0266",
+      "team": "Alpha",
+      "attacks": 12,
+      "hitsTaken": 49,
+      "ratio": 0.24489795918367346
+    },
+    {
+      "user": "Player_0723",
+      "team": "Beta",
+      "attacks": 15,
+      "hitsTaken": 45,
+      "ratio": 0.3333333333333333
+    },
+    {
+      "user": "Player_1343",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 58,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0022",
+      "team": "Alpha",
+      "attacks": 16,
+      "hitsTaken": 40,
+      "ratio": 0.4
+    },
+    {
+      "user": "Player_0488",
+      "team": "Alpha",
+      "attacks": 8,
+      "hitsTaken": 48,
+      "ratio": 0.16666666666666666
+    },
+    {
+      "user": "Player_1180",
+      "team": "Beta",
+      "attacks": 1,
+      "hitsTaken": 55,
+      "ratio": 0.01818181818181818
+    },
+    {
+      "user": "Player_0894",
+      "team": "Beta",
+      "attacks": 3,
+      "hitsTaken": 52,
+      "ratio": 0.057692307692307696
+    },
+    {
+      "user": "Player_0677",
+      "team": "Alpha",
+      "attacks": 9,
+      "hitsTaken": 46,
+      "ratio": 0.1956521739130435
+    },
+    {
+      "user": "HOST_Baloo",
+      "team": "Alpha",
+      "attacks": 11,
+      "hitsTaken": 43,
+      "ratio": 0.2558139534883721
+    },
+    {
+      "user": "Player_1336",
+      "team": "Beta",
+      "attacks": 17,
+      "hitsTaken": 36,
+      "ratio": 0.4722222222222222
+    },
+    {
+      "user": "katieeelynnn",
+      "team": "Alpha",
+      "attacks": 3,
+      "hitsTaken": 50,
+      "ratio": 0.06
+    },
+    {
+      "user": "Player_0865",
+      "team": "Alpha",
+      "attacks": 3,
+      "hitsTaken": 48,
+      "ratio": 0.0625
+    },
+    {
+      "user": "Player_0635",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 50,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0254",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 50,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1194",
+      "team": "Beta",
+      "attacks": 19,
+      "hitsTaken": 29,
+      "ratio": 0.6551724137931034
+    },
+    {
+      "user": "Player_0410",
+      "team": "Beta",
+      "attacks": 21,
+      "hitsTaken": 27,
+      "ratio": 0.7777777777777778
+    },
+    {
+      "user": "Player_0601",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 48,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0538",
+      "team": "Alpha",
+      "attacks": 10,
+      "hitsTaken": 37,
+      "ratio": 0.2702702702702703
+    },
+    {
+      "user": "PixelDust",
+      "team": "Alpha",
+      "attacks": 27,
+      "hitsTaken": 19,
+      "ratio": 1.4210526315789473
+    },
+    {
+      "user": "Player_1361",
+      "team": "Beta",
+      "attacks": 12,
+      "hitsTaken": 33,
+      "ratio": 0.36363636363636365
+    },
+    {
+      "user": "Player_0044",
+      "team": "Beta",
+      "attacks": 35,
+      "hitsTaken": 9,
+      "ratio": 3.888888888888889
+    },
+    {
+      "user": "Player_1237",
+      "team": "Beta",
+      "attacks": 12,
+      "hitsTaken": 32,
+      "ratio": 0.375
+    },
+    {
+      "user": "Player_0307",
+      "team": "Beta",
+      "attacks": 33,
+      "hitsTaken": 11,
+      "ratio": 3
+    },
+    {
+      "user": "Player_0365",
+      "team": "Alpha",
+      "attacks": 14,
+      "hitsTaken": 30,
+      "ratio": 0.4666666666666667
+    },
+    {
+      "user": "Player_0172",
+      "team": "Alpha",
+      "attacks": 30,
+      "hitsTaken": 14,
+      "ratio": 2.142857142857143
+    },
+    {
+      "user": "Player_1109",
+      "team": "Beta",
+      "attacks": 20,
+      "hitsTaken": 23,
+      "ratio": 0.8695652173913043
+    },
+    {
+      "user": "Player_1438",
+      "team": "Beta",
+      "attacks": 24,
+      "hitsTaken": 19,
+      "ratio": 1.263157894736842
+    },
+    {
+      "user": "Player_1468",
+      "team": "Beta",
+      "attacks": 8,
+      "hitsTaken": 35,
+      "ratio": 0.22857142857142856
+    },
+    {
+      "user": "Player_0048",
+      "team": "Alpha",
+      "attacks": 5,
+      "hitsTaken": 37,
+      "ratio": 0.13513513513513514
+    },
+    {
+      "user": "VMK_Gliss",
+      "team": "Alpha",
+      "attacks": 17,
+      "hitsTaken": 25,
+      "ratio": 0.68
+    },
+    {
+      "user": "Player_1436",
+      "team": "Alpha",
+      "attacks": 21,
+      "hitsTaken": 20,
+      "ratio": 1.05
+    },
+    {
+      "user": "Player_1254",
+      "team": "Beta",
+      "attacks": 10,
+      "hitsTaken": 31,
+      "ratio": 0.3225806451612903
+    },
+    {
+      "user": "Player_0751",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 41,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0823",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 41,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0038",
+      "team": "Alpha",
+      "attacks": 13,
+      "hitsTaken": 27,
+      "ratio": 0.48148148148148145
+    },
+    {
+      "user": "Player_1535",
+      "team": "Beta",
+      "attacks": 14,
+      "hitsTaken": 25,
+      "ratio": 0.56
+    },
+    {
+      "user": "Player_1351",
+      "team": "Beta",
+      "attacks": 16,
+      "hitsTaken": 23,
+      "ratio": 0.6956521739130435
+    },
+    {
+      "user": "Player_1066",
+      "team": "Alpha",
+      "attacks": 8,
+      "hitsTaken": 31,
+      "ratio": 0.25806451612903225
+    },
+    {
+      "user": "Player_0228",
+      "team": "Beta",
+      "attacks": 6,
+      "hitsTaken": 33,
+      "ratio": 0.18181818181818182
+    },
+    {
+      "user": "Player_0996",
+      "team": "Alpha",
+      "attacks": 5,
+      "hitsTaken": 32,
+      "ratio": 0.15625
+    },
+    {
+      "user": "Player_0304",
+      "team": "Beta",
+      "attacks": 34,
+      "hitsTaken": 3,
+      "ratio": 11.333333333333334
+    },
+    {
+      "user": "ObeyTheSun",
+      "team": "Alpha",
+      "attacks": 11,
+      "hitsTaken": 26,
+      "ratio": 0.4230769230769231
+    },
+    {
+      "user": "Player_0285",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 37,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1228",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 36,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0150",
+      "team": "Beta",
+      "attacks": 4,
+      "hitsTaken": 31,
+      "ratio": 0.12903225806451613
+    },
+    {
+      "user": "Player_0972",
+      "team": "Beta",
+      "attacks": 2,
+      "hitsTaken": 33,
+      "ratio": 0.06060606060606061
+    },
+    {
+      "user": "Player_1393",
+      "team": "Beta",
+      "attacks": 1,
+      "hitsTaken": 34,
+      "ratio": 0.029411764705882353
+    },
+    {
+      "user": "Player_0416",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 35,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0429",
+      "team": "Beta",
+      "attacks": 12,
+      "hitsTaken": 22,
+      "ratio": 0.5454545454545454
+    },
+    {
+      "user": "Square",
+      "team": "Beta",
+      "attacks": 26,
+      "hitsTaken": 8,
+      "ratio": 3.25
+    },
+    {
+      "user": "Player_1459",
+      "team": "Alpha",
+      "attacks": 8,
+      "hitsTaken": 26,
+      "ratio": 0.3076923076923077
+    },
+    {
+      "user": "Player_1416",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 34,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1294",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 33,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0222",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 33,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0119",
+      "team": "Beta",
+      "attacks": 18,
+      "hitsTaken": 13,
+      "ratio": 1.3846153846153846
+    },
+    {
+      "user": "Player_0470",
+      "team": "Alpha",
+      "attacks": 5,
+      "hitsTaken": 26,
+      "ratio": 0.19230769230769232
+    },
+    {
+      "user": "Player_0451",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 31,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1181",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 31,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1528",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 31,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0180",
+      "team": "Beta",
+      "attacks": 7,
+      "hitsTaken": 23,
+      "ratio": 0.30434782608695654
+    },
+    {
+      "user": "Player_1531",
+      "team": "Beta",
+      "attacks": 13,
+      "hitsTaken": 17,
+      "ratio": 0.7647058823529411
+    },
+    {
+      "user": "Player_0833",
+      "team": "Alpha",
+      "attacks": 3,
+      "hitsTaken": 27,
+      "ratio": 0.1111111111111111
+    },
+    {
+      "user": "Player_0620",
+      "team": "Beta",
+      "attacks": 14,
+      "hitsTaken": 16,
+      "ratio": 0.875
+    },
+    {
+      "user": "Player_1104",
+      "team": "Beta",
+      "attacks": 2,
+      "hitsTaken": 28,
+      "ratio": 0.07142857142857142
+    },
+    {
+      "user": "Player_0422",
+      "team": "Alpha",
+      "attacks": 3,
+      "hitsTaken": 26,
+      "ratio": 0.11538461538461539
+    },
+    {
+      "user": "Player_0400",
+      "team": "Beta",
+      "attacks": 6,
+      "hitsTaken": 23,
+      "ratio": 0.2608695652173913
+    },
+    {
+      "user": "Player_0054",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 29,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0679",
+      "team": "Beta",
+      "attacks": 6,
+      "hitsTaken": 22,
+      "ratio": 0.2727272727272727
+    },
+    {
+      "user": "Player_0986",
+      "team": "Alpha",
+      "attacks": 15,
+      "hitsTaken": 13,
+      "ratio": 1.1538461538461537
+    },
+    {
+      "user": "Player_0149",
+      "team": "Alpha",
+      "attacks": 2,
+      "hitsTaken": 25,
+      "ratio": 0.08
+    },
+    {
+      "user": "Player_1078",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 27,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0232",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 27,
+      "ratio": 0
+    },
+    {
+      "user": "princessn1996",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 26,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0638",
+      "team": "Alpha",
+      "attacks": 10,
+      "hitsTaken": 15,
+      "ratio": 0.6666666666666666
+    },
+    {
+      "user": "Player_1013",
+      "team": "Beta",
+      "attacks": 13,
+      "hitsTaken": 11,
+      "ratio": 1.1818181818181819
+    },
+    {
+      "user": "Player_0946",
+      "team": "Beta",
+      "attacks": 4,
+      "hitsTaken": 20,
+      "ratio": 0.2
+    },
+    {
+      "user": "Player_0857",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 24,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1065",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 24,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0617",
+      "team": "Beta",
+      "attacks": 14,
+      "hitsTaken": 9,
+      "ratio": 1.5555555555555556
+    },
+    {
+      "user": "Player_0541",
+      "team": "Alpha",
+      "attacks": 1,
+      "hitsTaken": 22,
+      "ratio": 0.045454545454545456
+    },
+    {
+      "user": "Player_0656",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 23,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0230",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 23,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0637",
+      "team": "Alpha",
+      "attacks": 7,
+      "hitsTaken": 15,
+      "ratio": 0.4666666666666667
+    },
+    {
+      "user": "Player_1269",
+      "team": "Beta",
+      "attacks": 8,
+      "hitsTaken": 13,
+      "ratio": 0.6153846153846154
+    },
+    {
+      "user": "Player_0853",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 21,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0502",
+      "team": "Alpha",
+      "attacks": 2,
+      "hitsTaken": 18,
+      "ratio": 0.1111111111111111
+    },
+    {
+      "user": "Player_0231",
+      "team": "Alpha",
+      "attacks": 6,
+      "hitsTaken": 14,
+      "ratio": 0.42857142857142855
+    },
+    {
+      "user": "Player_1332",
+      "team": "Alpha",
+      "attacks": 2,
+      "hitsTaken": 18,
+      "ratio": 0.1111111111111111
+    },
+    {
+      "user": "Player_1031",
+      "team": "Alpha",
+      "attacks": 3,
+      "hitsTaken": 17,
+      "ratio": 0.17647058823529413
+    },
+    {
+      "user": "BayyeBayye",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 20,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0599",
+      "team": "Beta",
+      "attacks": 2,
+      "hitsTaken": 17,
+      "ratio": 0.11764705882352941
+    },
+    {
+      "user": "Player_1355",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 19,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1196",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 19,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0932",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 19,
+      "ratio": 0
+    },
+    {
+      "user": "Slurp",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 19,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1362",
+      "team": "Beta",
+      "attacks": 7,
+      "hitsTaken": 11,
+      "ratio": 0.6363636363636364
+    },
+    {
+      "user": "Player_1133",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 18,
+      "ratio": 0
+    },
+    {
+      "user": "Gabby93",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 18,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1334",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 18,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0790",
+      "team": "Beta",
+      "attacks": 2,
+      "hitsTaken": 15,
+      "ratio": 0.13333333333333333
+    },
+    {
+      "user": "Player_0778",
+      "team": "Beta",
+      "attacks": 7,
+      "hitsTaken": 10,
+      "ratio": 0.7
+    },
+    {
+      "user": "Formulaone_Kobe",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 17,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0105",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 17,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0481",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 17,
+      "ratio": 0
+    },
+    {
+      "user": "AntPGN",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 17,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0239",
+      "team": "Alpha",
+      "attacks": 3,
+      "hitsTaken": 13,
+      "ratio": 0.23076923076923078
+    },
+    {
+      "user": "Player_0832",
+      "team": "Alpha",
+      "attacks": 5,
+      "hitsTaken": 10,
+      "ratio": 0.5
+    },
+    {
+      "user": "Player_0873",
+      "team": "Beta",
+      "attacks": 3,
+      "hitsTaken": 12,
+      "ratio": 0.25
+    },
+    {
+      "user": "Player_0806",
+      "team": "Alpha",
+      "attacks": 1,
+      "hitsTaken": 14,
+      "ratio": 0.07142857142857142
+    },
+    {
+      "user": "Player_0358",
+      "team": "Alpha",
+      "attacks": 5,
+      "hitsTaken": 10,
+      "ratio": 0.5
+    },
+    {
+      "user": "Player_0427",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 15,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0185",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 15,
+      "ratio": 0
+    },
+    {
+      "user": "sassytink",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 15,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0770",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 15,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0074",
+      "team": "Beta",
+      "attacks": 6,
+      "hitsTaken": 8,
+      "ratio": 0.75
+    },
+    {
+      "user": "Player_1085",
+      "team": "Beta",
+      "attacks": 3,
+      "hitsTaken": 11,
+      "ratio": 0.2727272727272727
+    },
+    {
+      "user": "Yurgle",
+      "team": "Beta",
+      "attacks": 5,
+      "hitsTaken": 9,
+      "ratio": 0.5555555555555556
+    },
+    {
+      "user": "Player_0949",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 14,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0273",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 14,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0207",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 14,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1502",
+      "team": "Alpha",
+      "attacks": 3,
+      "hitsTaken": 10,
+      "ratio": 0.3
+    },
+    {
+      "user": "Player_0282",
+      "team": "Beta",
+      "attacks": 3,
+      "hitsTaken": 10,
+      "ratio": 0.3
+    },
+    {
+      "user": "Player_0327",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 13,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0737",
+      "team": "Beta",
+      "attacks": 2,
+      "hitsTaken": 10,
+      "ratio": 0.2
+    },
+    {
+      "user": "Player_0124",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 12,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1426",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 12,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1394",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 12,
+      "ratio": 0
+    },
+    {
+      "user": "Salud",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 12,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0625",
+      "team": "Alpha",
+      "attacks": 1,
+      "hitsTaken": 10,
+      "ratio": 0.1
+    },
+    {
+      "user": "Player_0413",
+      "team": "Beta",
+      "attacks": 1,
+      "hitsTaken": 10,
+      "ratio": 0.1
+    },
+    {
+      "user": "Player_0475",
+      "team": "Beta",
+      "attacks": 4,
+      "hitsTaken": 7,
+      "ratio": 0.5714285714285714
+    },
+    {
+      "user": "Player_0757",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 11,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1249",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 11,
+      "ratio": 0
+    },
+    {
+      "user": "bellaprincess",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 11,
+      "ratio": 0
+    },
+    {
+      "user": "Kiss",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 11,
+      "ratio": 0
+    },
+    {
+      "user": "Redboba",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 10,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1167",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 10,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0366",
+      "team": "Alpha",
+      "attacks": 6,
+      "hitsTaken": 3,
+      "ratio": 2
+    },
+    {
+      "user": "Player_1369",
+      "team": "Beta",
+      "attacks": 1,
+      "hitsTaken": 8,
+      "ratio": 0.125
+    },
+    {
+      "user": "LargeMarge",
+      "team": "Alpha",
+      "attacks": 3,
+      "hitsTaken": 6,
+      "ratio": 0.5
+    },
+    {
+      "user": "Player_0497",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 9,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1202",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 9,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0941",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 9,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0907",
+      "team": "Beta",
+      "attacks": 1,
+      "hitsTaken": 7,
+      "ratio": 0.14285714285714285
+    },
+    {
+      "user": "Player_0306",
+      "team": "Alpha",
+      "attacks": 3,
+      "hitsTaken": 5,
+      "ratio": 0.6
+    },
+    {
+      "user": "Player_0685",
+      "team": "Beta",
+      "attacks": 3,
+      "hitsTaken": 5,
+      "ratio": 0.6
+    },
+    {
+      "user": "Player_0665",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 8,
+      "ratio": 0
+    },
+    {
+      "user": "Amadar",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 8,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0614",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 8,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1338",
+      "team": "Alpha",
+      "attacks": 4,
+      "hitsTaken": 3,
+      "ratio": 1.3333333333333333
+    },
+    {
+      "user": "jammiesgummy",
+      "team": "Alpha",
+      "attacks": 1,
+      "hitsTaken": 6,
+      "ratio": 0.16666666666666666
+    },
+    {
+      "user": "Player_0940",
+      "team": "Beta",
+      "attacks": 4,
+      "hitsTaken": 3,
+      "ratio": 1.3333333333333333
+    },
+    {
+      "user": "Player_1420",
+      "team": "Beta",
+      "attacks": 7,
+      "hitsTaken": 0,
+      "ratio": 7
+    },
+    {
+      "user": "Player_1357",
+      "team": "Alpha",
+      "attacks": 1,
+      "hitsTaken": 6,
+      "ratio": 0.16666666666666666
+    },
+    {
+      "user": "Player_0987",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 7,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1475",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 7,
+      "ratio": 0
+    },
+    {
+      "user": "SnowElsa",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 7,
+      "ratio": 0
+    },
+    {
+      "user": "Ripley",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 7,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1161",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 7,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0215",
+      "team": "Beta",
+      "attacks": 1,
+      "hitsTaken": 5,
+      "ratio": 0.2
+    },
+    {
+      "user": "Player_0989",
+      "team": "Beta",
+      "attacks": 4,
+      "hitsTaken": 2,
+      "ratio": 2
+    },
+    {
+      "user": "Player_0064",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 6,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0015",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 6,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1130",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 6,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0701",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 6,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1129",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 6,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0868",
+      "team": "Beta",
+      "attacks": 1,
+      "hitsTaken": 4,
+      "ratio": 0.25
+    },
+    {
+      "user": "Player_1258",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 5,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1230",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 5,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1028",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 5,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1375",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 5,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0183",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 5,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1415",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 5,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1023",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 5,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1169",
+      "team": "Beta",
+      "attacks": 3,
+      "hitsTaken": 1,
+      "ratio": 3
+    },
+    {
+      "user": "Player_0350",
+      "team": "Alpha",
+      "attacks": 1,
+      "hitsTaken": 3,
+      "ratio": 0.3333333333333333
+    },
+    {
+      "user": "Player_1171",
+      "team": "Beta",
+      "attacks": 1,
+      "hitsTaken": 3,
+      "ratio": 0.3333333333333333
+    },
+    {
+      "user": "BeefyPeaches",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 4,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0749",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 4,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0696",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 4,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1076",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 4,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0968",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 4,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0129",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 4,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1287",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 4,
+      "ratio": 0
+    },
+    {
+      "user": "TikiDaddy",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 4,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1266",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 4,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0838",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 4,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1478",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 4,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0162",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 4,
+      "ratio": 0
+    },
+    {
+      "user": "EllyPantz",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 4,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1349",
+      "team": "Beta",
+      "attacks": 1,
+      "hitsTaken": 2,
+      "ratio": 0.5
+    },
+    {
+      "user": "Player_0990",
+      "team": "Beta",
+      "attacks": 1,
+      "hitsTaken": 2,
+      "ratio": 0.5
+    },
+    {
+      "user": "SweetSinger",
+      "team": "Beta",
+      "attacks": 2,
+      "hitsTaken": 1,
+      "ratio": 2
+    },
+    {
+      "user": "Player_0125",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 3,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0267",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 3,
+      "ratio": 0
+    },
+    {
+      "user": "Inspire",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 3,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0079",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 3,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1090",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 3,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0912",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 3,
+      "ratio": 0
+    },
+    {
+      "user": "WanderingFreeEzra",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 3,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0435",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 3,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0160",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 3,
+      "ratio": 0
+    },
+    {
+      "user": "Princess_Sav",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 3,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0212",
+      "team": "Beta",
+      "attacks": 2,
+      "hitsTaken": 0,
+      "ratio": 2
+    },
+    {
+      "user": "Player_1348",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0253",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0192",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0002",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0866",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "MadBubbleAngel",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0750",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "LavenderLemonDrop",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0954",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "Whispered",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0913",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1466",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1062",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "Hoppingkitten",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "chujellysoup",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "Twit",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "ShyNewTurtle",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0816",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1403",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "MajesticLittleDuck",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1373",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0945",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0056",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0283",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 2,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0062",
+      "team": "Alpha",
+      "attacks": 1,
+      "hitsTaken": 0,
+      "ratio": 1
+    },
+    {
+      "user": "PuffyCyanPuppy",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 1,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1356",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 1,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0258",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 1,
+      "ratio": 0
+    },
+    {
+      "user": "moonbound",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 1,
+      "ratio": 0
+    },
+    {
+      "user": "LadyKarrah88",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 1,
+      "ratio": 0
+    },
+    {
+      "user": "summerXhco",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 1,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1088",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 1,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0369",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 1,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0425",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 1,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0702",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 1,
+      "ratio": 0
+    },
+    {
+      "user": "lafufu",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 1,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0170",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 1,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1074",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 1,
+      "ratio": 0
+    },
+    {
+      "user": "Player_1494",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 1,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0049",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 1,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0026",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 1,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0675",
+      "team": "Beta",
+      "attacks": 0,
+      "hitsTaken": 1,
+      "ratio": 0
+    },
+    {
+      "user": "Player_0920",
+      "team": "Alpha",
+      "attacks": 0,
+      "hitsTaken": 1,
+      "ratio": 0
+    }
+  ],
+  "regression": {
+    "overall": {
+      "slope": 0.5256979460371205,
+      "intercept": 47.73142091870988,
+      "xMin": 0,
+      "xMax": 2422,
+      "y1": 47.73142091870988,
+      "y2": 1320.9718462206156,
+      "label": "All"
+    },
+    "alpha": {
+      "slope": 0.4647718709305967,
+      "intercept": 57.69948668533956,
+      "xMin": 0,
+      "xMax": 2422,
+      "y1": 57.69948668533956,
+      "y2": 1183.3769580792446,
+      "label": "Alpha"
+    },
+    "beta": {
+      "slope": 0.6238225847327046,
+      "intercept": 36.8209284804482,
+      "xMin": 0,
+      "xMax": 2422,
+      "y1": 36.8209284804482,
+      "y2": 1547.7192287030587,
+      "label": "Beta"
+    }
+  },
+  "topRooms": [
+    {
+      "roomName": "Captain's Quest Quarters",
+      "hitCount": 19478,
+      "avgUserRatio": 0.9,
+      "activeUsers": 237
+    },
+    {
+      "roomName": "Main Street",
+      "hitCount": 6622,
+      "avgUserRatio": 1,
+      "activeUsers": 228
+    },
+    {
+      "roomName": "Town Square",
+      "hitCount": 4408,
+      "avgUserRatio": 0.76,
+      "activeUsers": 246
+    },
+    {
+      "roomName": "Central Plaza",
+      "hitCount": 3053,
+      "avgUserRatio": 1.4,
+      "activeUsers": 151
+    },
+    {
+      "roomName": "Matterhorn",
+      "hitCount": 1094,
+      "avgUserRatio": 2.56,
+      "activeUsers": 79
+    },
+    {
+      "roomName": "Epcot Entrance",
+      "hitCount": 984,
+      "avgUserRatio": 1.01,
+      "activeUsers": 81
+    },
+    {
+      "roomName": "Dungeon",
+      "hitCount": 775,
+      "avgUserRatio": 2.41,
+      "activeUsers": 47
+    },
+    {
+      "roomName": "Snow White Hide 'n Seek Forest",
+      "hitCount": 763,
+      "avgUserRatio": 1.1,
+      "activeUsers": 33
+    },
+    {
+      "roomName": "Fantasyland in The Sky",
+      "hitCount": 570,
+      "avgUserRatio": 1.9,
+      "activeUsers": 41
+    },
+    {
+      "roomName": "Anandapur",
+      "hitCount": 543,
+      "avgUserRatio": 0.77,
+      "activeUsers": 24
+    },
+    {
+      "roomName": "Frontierland Hub",
+      "hitCount": 506,
+      "avgUserRatio": 1.35,
+      "activeUsers": 40
+    },
+    {
+      "roomName": "Mickey's Courtyard",
+      "hitCount": 431,
+      "avgUserRatio": 6.7,
+      "activeUsers": 27
+    },
+    {
+      "roomName": "Tiki Tiki Tiki Island",
+      "hitCount": 341,
+      "avgUserRatio": 1.06,
+      "activeUsers": 33
+    },
+    {
+      "roomName": "Autopia Off Road on Mars",
+      "hitCount": 310,
+      "avgUserRatio": 1.05,
+      "activeUsers": 29
+    },
+    {
+      "roomName": "VMK Gallery",
+      "hitCount": 299,
+      "avgUserRatio": 1.22,
+      "activeUsers": 35
+    },
+    {
+      "roomName": "VMK Esplanade",
+      "hitCount": 291,
+      "avgUserRatio": 1.43,
+      "activeUsers": 65
+    },
+    {
+      "roomName": "Sci-Fi Dine-In",
+      "hitCount": 264,
+      "avgUserRatio": 4.78,
+      "activeUsers": 33
+    },
+    {
+      "roomName": "New Orleans Square",
+      "hitCount": 177,
+      "avgUserRatio": 1.23,
+      "activeUsers": 19
+    },
+    {
+      "roomName": "Castle Forecourt",
+      "hitCount": 160,
+      "avgUserRatio": 1.21,
+      "activeUsers": 42
+    },
+    {
+      "roomName": "Tomorrowland Hub",
+      "hitCount": 145,
+      "avgUserRatio": 2.75,
+      "activeUsers": 22
+    },
+    {
+      "roomName": "Adventureland Bazaar",
+      "hitCount": 126,
+      "avgUserRatio": 2.61,
+      "activeUsers": 21
+    },
+    {
+      "roomName": "Shrunken Ned's Shop",
+      "hitCount": 125,
+      "avgUserRatio": 1.83,
+      "activeUsers": 19
+    },
+    {
+      "roomName": "Autopia Quest Track",
+      "hitCount": 115,
+      "avgUserRatio": 2.05,
+      "activeUsers": 11
+    },
+    {
+      "roomName": "Forbidden Temple",
+      "hitCount": 106,
+      "avgUserRatio": 1.54,
+      "activeUsers": 17
+    },
+    {
+      "roomName": "Explorer's Tent",
+      "hitCount": 104,
+      "avgUserRatio": 3.37,
+      "activeUsers": 15
+    }
+  ]
+}
