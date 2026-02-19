@@ -1309,8 +1309,8 @@ async function renderTeamStats(summary, teamTotals) {
   ];
 
   const logoMap = {
-    alpha: 'alpha.png',
-    beta: 'beta.png'
+    alpha: 'team-a.png',
+    beta: 'team-b.png'
   };
 
   container.innerHTML = items.map(item => {
@@ -2929,7 +2929,7 @@ function compareHeadToHead() {
 
   const formatNetDiff = (diff) => diff > 0 ? `+${diff}` : diff.toString();
 
-  const getTeamLogo = (team) => team.toLowerCase() === 'alpha' ? 'alpha.png' : 'beta.png';
+  const getTeamLogo = (team) => team.toLowerCase() === 'alpha' ? 'team-a.png' : 'team-b.png';
 
   resultDiv.style.display = "block";
   statsDiv.innerHTML = `
